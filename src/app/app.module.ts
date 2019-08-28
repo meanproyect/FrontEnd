@@ -17,6 +17,7 @@ import { TicketsComponent } from './components/tickets/tickets.component';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ClientService } from './services/client.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

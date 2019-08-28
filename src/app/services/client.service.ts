@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ClientService {
-  endopoint = 'http://localhost:3789/AdministratorPlusTI';
+  endpoint = 'http://localhost:3789/ClientPlusTI';
   httpOptions ={
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -21,24 +21,25 @@ export class ClientService {
     return body || [] || {};
   }
   getClients(): Observable<any>{
-    return this.http.get(this.endopoint + '/List-Clients', this.httpOptions).pipe(
+    return this.http.get(this.endpoint + '/List-Clients', this.httpOptions).pipe(
       map(this.extractData)
     );
   }
   setClient(save_client): Observable<any>{
     let params = JSON.stringify(save_client);
-    return this.http.post(this.endopoint + '/Save-Client', params, this.httpOptions).pipe(
+    console.log(params);
+    return this.http.post(this.endpoint + '/Save-Client', params, this.httpOptions).pipe(
       map(this.extractData)
     )
   }
   updateClient(id,update_client): Observable<any>{
     let params = JSON.stringify(update_client);
-    return this.http.put(this.endopoint + '/Update-Client/'+ id, params, this.httpOptions).pipe(
+    return this.http.put(this.endpoint + '/Update-Client/'+ id, params, this.httpOptions).pipe(
       map(this.extractData)
     );
   }
   deleteClient(id): Observable<any>{
-    return this.http.put(this.endopoint + '/Delete-Client/' + id, this.httpOptions).pipe(
+    return this.http.put(this.endpoint + '/Delete-Client/' + id, this.httpOptions).pipe(
       map(this.extractData)
     )
   }

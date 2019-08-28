@@ -12,13 +12,14 @@ export class RegisterComponent implements OnInit {
   client: ClientModels
   constructor(public rest: ClientService,private router: Router ) { 
     this.rest.setClient(this.client);
-    this.client = new ClientModels('','','','','','');
+    this.client = new ClientModels('','','');
   }
 
   ngOnInit() {
   }
 
   onSubmit(){
+    console.log(this.client);
     this.rest.setClient(this.client).subscribe(res =>{
       if(res.message == 'Debes de ingresar la información en todos los campos'){
         Swal.fire({
