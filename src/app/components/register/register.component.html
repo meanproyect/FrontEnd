@@ -62,17 +62,19 @@
           <div class="form-group">
             <div class="col-md-12 col-sm-12">
   
-              <!-- Formulario para ingresar datos del animal -->
-              <form>
-                <br><input type="text"  class="form-control"  placeholder="Nombre"><br>
-                <input type="text"   class="form-control"  placeholder="País"><br>
-                <input type="password"  class="form-control"  placeholder="Password"><br>
+              <!-- Formulario para ingresar datos del cliente -->
+              <form >
+                <br><input type="text"  class="form-control" name="name" placeholder="Nombre" [(ngModel)]="client.nameClient"><br>
+                <input type="text"   class="form-control" name="country" placeholder="País" [(ngModel)]="client.country" ><br>
+                <input type="password"  class="form-control"name="password"  placeholder="Password" [(ngModel)]="client.password"><br>
               </form>
 
              <!-- BOTONES FOOTER DEL MODAL -->
             <div class="modal-footer">
+
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onSubmit()">Guardar</button>
+
             </div>
   
   

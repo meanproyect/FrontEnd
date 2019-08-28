@@ -11,7 +11,12 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterAdminComponent } from './components/register-admin/register-admin.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+import { HttpClientModule } from '@angular/common/http';
+import { TicketsComponent } from './components/tickets/tickets.component';
+
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +27,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     UsuariosComponent,
     HomeComponent,
-    RegisterAdminComponent
+    RegisterAdminComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
