@@ -11,6 +11,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterAdminComponent } from './components/register-admin/register-admin.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegisterAdminComponent } from './components/register-admin/register-adm
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
