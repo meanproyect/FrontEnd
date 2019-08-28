@@ -64,9 +64,9 @@
   
               <!-- Formulario para ingresar datos del animal -->
               <form>
-                <br><input type="text"  class="form-control"  placeholder="Nombre"><br>
-                <input type="text"   class="form-control"  placeholder="País"><br>
-                <input type="password"  class="form-control"  placeholder="Password"><br>
+                <br><input type="text"  class="form-control"  placeholder="Nombre" [(ngModel)]="client.nameClient"><br>
+                <input type="text"   class="form-control"  placeholder="País" [(ngModel)]="client.country"><br>
+                <input type="password"  class="form-control"  placeholder="Password" [(ngModel)]="client.password"><br>
               </form>
 
              <!-- BOTONES FOOTER DEL MODAL -->
