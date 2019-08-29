@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from 'src/app/services/client.service';
+import { ClientModels } from 'src/app/models/client-models';
 
 @Component({
   selector: 'app-usuarios',
