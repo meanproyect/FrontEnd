@@ -43,4 +43,9 @@ export class AdministratorService {
       map(this.extractData)
     )
   }
+  buscarAdministrator(id): Observable<any>{
+    return this.http.get(this.endpoint + '/Buscar-user/' + id, this.httpOptions).pipe(
+      map(this.extractData)
+    )
+  }
 }
