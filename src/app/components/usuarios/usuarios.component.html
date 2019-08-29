@@ -41,31 +41,18 @@
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de usuario:
                     {{client.clientCode}}</p>
                   <br><br><br>
-                  <button type="button" class="btn btn-outline-success" style="margin: 10px" data-toggle="modal" data-target="#login-modal">Actualizar</button>
-                  <button type="button" class="btn btn-outline-primary" (click)="updateClients(client)">Eliminar</button>
-                  <div data-backdrop="static" data-keyboard="false" class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalCenterTitle">¿Está seguro de eliminar este regristro?</h5>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="updateClients(client)">Sí</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" data-toggle="modal" data-target="#login-modal">Actualizar Datos Personales</button>
+                  <button type="button" class="btn btn-outline-success" style="margin: 10px" data-toggle="modal" data-target="#login-modal">Actualizar Contraseña</button>
+                  <button type="button" class="btn btn-outline-danger" (click)="updateClients(client)" style="width: 107px;">Eliminar</button>
                 </div>
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div><br>
     <hr style="background-color: ivory;">
   </div>
 
-  <!-- Modal -->
+
   
