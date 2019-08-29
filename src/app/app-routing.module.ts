@@ -9,6 +9,8 @@ import { TicketsComponent } from './components/tickets/tickets.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UsuariosNoFakeComponent } from './components/usuarios-no-fake/usuarios-no-fake.component';
 import { UpdateClienteContrasenaComponent } from './components/update-cliente-contrasena/update-cliente-contrasena.component';
+import { OtroComponent } from './components/otro/otro.component';
+
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
