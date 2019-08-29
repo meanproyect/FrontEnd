@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ClientService } from './services/client.service';
 import { UsuariosNoFakeComponent } from './components/usuarios-no-fake/usuarios-no-fake.component';
 import { UpdateClienteContrasenaComponent } from './components/update-cliente-contrasena/update-cliente-contrasena.component';
+import { OtroComponent } from './components/otro/otro.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UpdateClienteContrasenaComponent } from './components/update-cliente-co
     RegisterAdminComponent,
     TicketsComponent,
     UsuariosNoFakeComponent,
-    UpdateClienteContrasenaComponent
+    UpdateClienteContrasenaComponent,
+    OtroComponent
   ],
   imports: [
     BrowserModule,
