@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
           type: 'error',
           title: 'Error',
           text: 'Debes de ingresar todos los campos',
-          timer: 1500
+          timer: 2000
         });
       }else{
         if(res.client && res.client._id){
@@ -34,21 +34,22 @@ export class RegisterComponent implements OnInit {
             type: 'success',
             title: 'Guardado',
             text: 'Se ha guardado correctamente',
-            timer: 1500
+            timer: 2000
           });
+          this.router.navigateByUrl('usuarios');
         }else if(res.message == 'Este Cliente ya se ha registrado'){
           Swal.fire({
             type: 'error',
             title: 'Error',
             text: 'El usuario ya esta registrado',
-            timer: 1500
+            timer: 2000
           });
         }else if(res.message == 'Error al guardar el Cliente'){
           Swal.fire({
             type: 'error',
             title: 'Error',
             text: 'Error al guardar el Cliente',
-            timer: 1500
+            timer: 2000
           });
         }
       }
