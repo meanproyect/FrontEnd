@@ -41,9 +41,10 @@
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de usuario:
                     {{client.clientCode}}</p>
                   <br><br><br>
-                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" data-toggle="modal" data-target="#login-modal">Actualizar Datos Personales</button>
-                  <button type="button" class="btn btn-outline-success" style="margin: 10px" data-toggle="modal" data-target="#login-modal">Actualizar Contraseña</button>
-                  <button type="button" class="btn btn-outline-danger" (click)="updateClients(client)" style="width: 107px;">Eliminar</button>
+                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" (click)="updateClientsDatos(client)">Actualizar Datos Personales</button>
+                  <button type="button" class="btn btn-outline-success" style="margin: 10px" (click)="updateClients(client)" >Actualizar Contraseña</button>
+                  <button type="button" class="btn btn-outline-danger"  style="width: 107px;" (click)="deleteClient(client)">Eliminar</button>
+                </div>
                 </div>
               </div>
             </div>

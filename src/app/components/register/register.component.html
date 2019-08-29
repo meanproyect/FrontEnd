@@ -255,7 +255,7 @@
             <input type="password" class="form-control" name="password"  placeholder="Ingresa la contraseña del cliente" [(ngModel)]="client.password">
           </div> <br>
           <div class="submit" style="text-align: center;">
-            <input type="button" value="Registrar usuario" (click)="onSubmit()" id="form_button"/>
+            <input type="button" value="{{this.params.snapshot.params.id != ':id'? 'Actualizar Cliente' : 'Registrar Cliente'}}" (click)="onSubmit()" id="form_button"/>
           </div>
       </form>
     </div>

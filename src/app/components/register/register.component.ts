@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.params.snapshot.params.id);
-    if (this.params.snapshot.params.id != '') {
+    if (this.params.snapshot.params.id != ':id') {
 
       this.rest.BuscarClient(this.params.snapshot.params.id).subscribe(res => {
 
@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.client);
-    if (this.params.snapshot.params.id != '') {
+    if (this.params.snapshot.params.id != ':id') {
       this.rest.updateClient(this.params.snapshot.params.id, this.client).subscribe(res => {
         if (res.message == 'Error al actualizar') {
           Swal.fire({
