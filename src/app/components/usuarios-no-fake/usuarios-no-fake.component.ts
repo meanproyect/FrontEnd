@@ -15,7 +15,7 @@ export class UsuariosNoFakeComponent implements OnInit {
 
 
   constructor(public rest: AdministratorService, private router: Router) {
-    
+
    }
 
   ngOnInit() {
@@ -25,7 +25,8 @@ export class UsuariosNoFakeComponent implements OnInit {
   
   getAdministrators() {
     this.rest.getAdministrator().subscribe(res => {
-      this.administrators = res.admin;
+      console.log(res);
+      this.administrators = res.users;
     });
   }
   

@@ -30,18 +30,21 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title text">Nombre: {{admin.Nombre}}</h5>
+                  <h5 class="card-title text">Nombre: {{admin.name}}</h5>
                   <p class="card-text text-gray"><i class="fa fa-globe"
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Apellido:
-                    {{admin.Apellido}}</p>
+                    {{admin.surname}}</p>
                   <p class="card-text text-gray"><i class="fa fa-user"
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Rol: {{admin.role}}
                   </p>
+                  <p class="card-text text-gray"><i class="fa fa-user"
+                    style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Codigo: {{admin.code}}
+                </p>
      
                   <br><br><br>
-                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" data-toggle="modal" data-target="#login-modal">Actualizar Datos Personales</button>
-                  <button type="button" class="btn btn-outline-success" style="margin: 10px" data-toggle="modal" data-target="#login-modal">Actualizar Contraseña</button>
-                  <button type="button" class="btn btn-outline-danger" (click)="updateClients(client)" style="width: 107px;">Eliminar</button>
+                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" >Actualizar Datos Personales</button>
+                  <button type="button" class="btn btn-outline-success" style="margin: 10px" >Actualizar Contraseña</button>
+                  <button type="button" class="btn btn-outline-danger" style="width: 107px;">Eliminar</button>
                 </div>
               </div>
             </div>
