@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClientService } from './services/client.service';
 import { UsuariosNoFakeComponent } from './components/usuarios-no-fake/usuarios-no-fake.component';
+import { UpdateClienteContrasenaComponent } from './components/update-cliente-contrasena/update-cliente-contrasena.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UsuariosNoFakeComponent } from './components/usuarios-no-fake/usuarios-
     HomeComponent,
     RegisterAdminComponent,
     TicketsComponent,
-    UsuariosNoFakeComponent
+    UsuariosNoFakeComponent,
+    UpdateClienteContrasenaComponent
   ],
   imports: [
     BrowserModule,

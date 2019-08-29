@@ -41,8 +41,8 @@
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de usuario:
                     {{client.clientCode}}</p>
                   <br><br><br>
-                  <button type="button" class="btn btn-outline-success" style="margin: 10px" (click)="updateClients(client)">Actualizar</button>
-                  <button type="button" class="btn btn-outline-primary">Eliminar</button>
+                  <button type="button" class="btn btn-outline-success" style="margin: 10px" data-toggle="modal" data-target="#exampleModal">Actualizar</button>
+                  <button type="button" class="btn btn-outline-primary" (click)="updateClients(client)">Eliminar</button>
                 </div>
               </div>
             </div>
@@ -51,4 +51,32 @@
       </div>
     </div><br>
     <hr style="background-color: ivory;">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text" id="exampleModalLabel">Actualizacion de datos del Cliente</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="col-md-12 col-sm-12">
+
+              <!-- Formulario para ingresar datos del Ticket -->
+              <form>
+                  <button type="button" class="btn btn-outline-success" style="margin: 10px">Actualizar Datos Personales</button>
+                  <button type="button" class="btn btn-outline-primary" (click)="updateClients(client)">Actualizar Contraseña</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>

@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { TicketsComponent } from './components/tickets/tickets.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UsuariosNoFakeComponent } from './components/usuarios-no-fake/usuarios-no-fake.component';
+import { UpdateClienteContrasenaComponent } from './components/update-cliente-contrasena/update-cliente-contrasena.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'usuarios', component: UsuariosComponent},
   {path: 'tickets', component: TicketsComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'usuariosNoFake', component: UsuariosNoFakeComponent}
+  {path: 'usuariosNoFake', component: UsuariosNoFakeComponent},
+  {path: 'updateclientecontrasena', component: UpdateClienteContrasenaComponent}
 ];
 
 @NgModule({
