@@ -29,5 +29,10 @@ export class UsuariosNoFakeComponent implements OnInit {
       this.administrators = res.users;
     });
   }
-  
+  updateAdministratorPassword(admin){
+    this.router.navigateByUrl('registerAdmin/'+admin._id);
+  }
+  updateAdministrator(admin){
+    this.router.navigateByUrl('updateusercontrasena/'+ admin._id);
+  }
 }

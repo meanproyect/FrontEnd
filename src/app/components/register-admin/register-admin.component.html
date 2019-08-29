@@ -30,7 +30,7 @@
             <input type="password" class="form-control" name="password"  placeholder="Ingresa la contraseña del administrador" [(ngModel)]="admin.password">
           </div> <br>
           <div class="submit" style="text-align: center;">
-            <input type="button" value="Registrar administrador" (click)="onSubmit()" id="form_button"/>
+            <input type="button" value="{{this.params.snapshot.params.id != ':id'? 'Actualizar Administrador' : 'Registrar Administrador'}}" (click)="onSubmit()" id="form_button"/>
           </div>
       </form>
     </div>

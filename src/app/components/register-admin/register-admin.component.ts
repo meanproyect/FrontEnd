@@ -40,13 +40,20 @@ export class RegisterAdminComponent implements OnInit {
             timer: 2000
           })
         }else{
-          if(res.client && res.client._id){
+          if(res.user && res.user._id){
             Swal.fire({
               type: 'success',
               title: 'Actulizando',
               text: 'Actualizado correactamente!',
-              timer:200
+              timer:2000
             });
+          }else if(res.message =='Debes de ingresar la contraseña obligatoriamente'){
+            Swal.fire({
+              type: 'error',
+              title: 'Error',
+              text: 'Debes de ingresar el campo de contraseña',
+              timer: 2000
+            })
           }
         }
       })

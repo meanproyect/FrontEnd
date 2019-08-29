@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent},
   {path: 'usuariosNoFake', component: UsuariosNoFakeComponent},
   {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent},
-  {path: 'updateusercontrasena', component: UpdateUserContrasenaComponent},
+  {path: 'updateusercontrasena/:id', component: UpdateUserContrasenaComponent},
   {path: 'listarTickets', component: ListarTicketsComponent}
 ];
 
