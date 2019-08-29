@@ -1,21 +1,59 @@
-<div class="Fondo"> 
-<div id="container">
-  <br>
-    <h1>&bull; ¡BIENVENIDO! &bull;</h1>
-    <div class="underline">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-10">
+        <h2 class="h3 mb-3 font-weight-normal">¡Bienvenido!</h2>
     </div>
-    <form action="#" method="post" id="contact_form">
-      <div class="Usuario">
-        <label for="usuario"></label>
-        <input type="text" placeholder="Mi usuario es" name="usuario" id="usuario_input" required>
-      </div>
-      <div class="Contraseña">
-          <label for="contraseña"></label>
-          <input type="password" class="" placeholder="Mi contraseña es" name="contraseña" id="contraseña_input" required>
+  </div>
+  <div class="row ">
+    <div class="col-md-6 mx-auto mt-5">
+      <form >
+          <div class="form-group">
+            <label style="color: black">Usuario</label>
+            <input type="email"  name="Email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label style="color: black">Contraseña</label>
+            <input type="password"  name="Password"class="form-control">
+          </div>
+          <div class="submit" style="text-align: center;">
+            <input type="submit" value="Iniciar Sesion" id="form_button"/>
+          </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-md-6 mx-auto mt-3 text-center">
+
+    </div>
+    <br>
+    <div class="centrar transparente" style="letter-spacing: 1px;">
+      <div class="row backdiv">
+        <div>
+          <form class="centrar">
+            <div class="form-row">
+              <div class="form-group">
+                <button class="btn btn-lg" href="https://accounts.google.com/Login?hl=es" style="color:black"><i
+                    class="fab fa-google-plus" style="color: black"></i> Google</button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-lg" href="https://twitter.com/login?lang=es" style="color:black"><i
+                    class="fab fa-twitter-square" style="color: black"></i> Twitter</button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-lg" href="https://twitter.com/login?lang=es" style="color:black"><i
+                    class="fab fa-facebook-f" style="color: black"></i> Facebook</button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-lg" href="https://vine.co/" style="color:black"><i class="fab fa-vine"
+                    style="color: black"></i> Vine</button>
+              </div>
+            </div>
+          </form>
         </div>
-      <div class="submit" style="text-align: center;">
-        <input type="submit" value="Iniciar Sesion" id="form_button"/>
       </div>
-    </form>
+    </div>
   </div>
 </div>
