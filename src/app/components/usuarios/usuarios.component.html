@@ -3,62 +3,48 @@
 <div class='login'>
   <br>
   <h2 class="h3 mb-3 font-weight-normal">Clientes</h2>
-  
+
   <div class="container">
-      <form>
-          <div class="cajita form-row">
-            <div class="input-group mb-3 backdiv">
-              <input class="form-control" style="z-index: 0;" 
-                name="search" type="text" placeholder="Ingresa a la persona que deseas buscar">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
-                    style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
-              </div>
-            </div>
+    <form>
+      <div class="cajita form-row">
+        <div class="input-group mb-3 backdiv">
+          <input class="form-control" style="z-index: 0;" name="search" type="text"
+            placeholder="Ingresa a la persona que deseas buscar">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
+                style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
           </div>
-        </form>
+        </div>
+      </div>
+    </form>
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <hr style="background-color: ivory;"><br>
         <div class="row"><br>
-            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;">
-              <div class="row">
-                <div class="col-md-4">
-                  <img style="padding: 25px"
-                    src="https://cdn.pixabay.com/photo/2016/03/31/20/37/client-1295901_960_720.png" class="card-img">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title text">Cuidador</h5>
-                    <p class="card-text text-gray"><i class="fa fa-user" style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i>Nombre: Alejandro Hernández</p>
-                    <p class="card-text text-gray"><i class="fa fa-paw" style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i>Cargo: cuidador de animales</p>
-                    <p class="card-text text-gray"><i class="fa fa-phone" style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Celular: 51121780</p>
-                    <p class="card-text text-gray"><i class="fa fa-plus" style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Animales a Cargo: <i class="fa fa-paw" style="font-size:16px; color: rgb(158, 158, 158); margin-left: 5px;"></i> Leones</p>
-                    <br><br><br>
-                    <p class="card-text"><small class="text-muted">Ultima actividad hace 10 minutos</small></p>
-                  </div>
+          <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"
+            *ngFor='let client of clientes'>
+            <div class="row">
+              <div class="col-md-4">
+                <img style="padding: 25px"
+                  src="https://cdn.pixabay.com/photo/2016/03/31/20/37/client-1295901_960_720.png" class="card-img">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title text">Cliente: {{client.nameClient}}</h5>
+                  <p class="card-text text-gray"><i class="fa fa-globe"
+                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> País:
+                    {{client.country}}</p>
+                  <p class="card-text text-gray"><i class="fa fa-user"
+                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Rol: {{client.role}}
+                  </p>
+                  <p class="card-text text-gray"><i class="fa fa-id-card"
+                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de usuario:
+                    {{client.clientCode}}</p>
+                  <br><br><br>
                 </div>
               </div>
             </div>
-            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;">
-              <div class="row">
-                <div class="col-md-4">
-                  <img style="padding: 25px"
-                    src="https://cdn.pixabay.com/photo/2016/03/31/20/37/client-1295901_960_720.png" class="card-img">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title text">Cuidador</h5>
-                    <p class="card-text text-gray"><i class="fa fa-user" style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i>Nombre: Miguel Perez</p>
-                    <p class="card-text text-gray"><i class="fa fa-paw" style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i>Cargo: cuidador de animales</p>
-                    <p class="card-text text-gray"><i class="fa fa-phone" style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Celular: 12456987</p>
-                    <p class="card-text text-gray"><i class="fa fa-plus" style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Animales a Cargo: <i class="fa fa-paw" style="font-size:16px; color: rgb(158, 158, 158); margin-left: 5px;"></i> Tigres</p>
-                    <br><br><br>
-                    <p class="card-text"><small class="text-muted">Ultima actividad hace 10 minutos</small></p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          </div>
         </div>
       </div>
     </div><br>
