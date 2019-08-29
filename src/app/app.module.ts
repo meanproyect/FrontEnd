@@ -18,6 +18,7 @@ import { TicketsComponent } from './components/tickets/tickets.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClientService } from './services/client.service';
+import { UsuariosNoFakeComponent } from './components/usuarios-no-fake/usuarios-no-fake.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ClientService } from './services/client.service';
     UsuariosComponent,
     HomeComponent,
     RegisterAdminComponent,
-    TicketsComponent
+    TicketsComponent,
+    UsuariosNoFakeComponent
   ],
   imports: [
     BrowserModule,
