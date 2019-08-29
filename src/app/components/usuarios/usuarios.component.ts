@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class UsuariosComponent implements OnInit {
   client: ClientModels;
-  clientes: ClientModels[];
+  clientes = [];
 
   constructor(public rest: ClientService, private router: Router) { }
 
@@ -22,9 +22,8 @@ export class UsuariosComponent implements OnInit {
   
   getClients() {
     this.rest.getClients().subscribe(res => {
-      console.log(res);
-      this.clientes = res.client
-    })
+      this.clientes = res.client;
+    });
   }
   updateClients(client){
     this.router.navigateByUrl('register/'+client._id);
