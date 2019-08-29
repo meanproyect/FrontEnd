@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'tickets', component: TicketsComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'usuariosNoFake', component: UsuariosNoFakeComponent},
-  {path: 'updateclientecontrasena', component: UpdateClienteContrasenaComponent}
+  {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent}
 ];
 
 @NgModule({
