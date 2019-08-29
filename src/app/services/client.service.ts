@@ -43,6 +43,10 @@ export class ClientService {
       map(this.extractData)
     )
   }
-
+  BuscarClient(id): Observable<any>{
+    return this.http.get(this.endpoint + '/Buscar-Clients/' + id, this.httpOptions).pipe(
+      map(this.extractData)
+    )
+  }
 }
 
