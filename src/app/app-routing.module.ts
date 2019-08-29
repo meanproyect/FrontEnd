@@ -10,6 +10,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { UsuariosNoFakeComponent } from './components/usuarios-no-fake/usuarios-no-fake.component';
 import { UpdateClienteContrasenaComponent } from './components/update-cliente-contrasena/update-cliente-contrasena.component';
 import { OtroComponent } from './components/otro/otro.component';
+import { ListarTicketsComponent } from './components/listar-tickets/listar-tickets.component';
+import { UpdateUserContrasenaComponent } from './components/update-user-contrasena/update-user-contrasena.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path: 'tickets', component: TicketsComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'usuariosNoFake', component: UsuariosNoFakeComponent},
-  {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent}
+  {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent},
+  {path: 'updateusercontrasena', component: UpdateUserContrasenaComponent},
+  {path: 'listarTickets', component: ListarTicketsComponent}
 ];
 
 @NgModule({

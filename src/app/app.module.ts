@@ -21,6 +21,8 @@ import { ClientService } from './services/client.service';
 import { UsuariosNoFakeComponent } from './components/usuarios-no-fake/usuarios-no-fake.component';
 import { UpdateClienteContrasenaComponent } from './components/update-cliente-contrasena/update-cliente-contrasena.component';
 import { OtroComponent } from './components/otro/otro.component';
+import { ListarTicketsComponent } from './components/listar-tickets/listar-tickets.component';
+import { UpdateUserContrasenaComponent } from './components/update-user-contrasena/update-user-contrasena.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { OtroComponent } from './components/otro/otro.component';
     TicketsComponent,
     UsuariosNoFakeComponent,
     UpdateClienteContrasenaComponent,
-    OtroComponent
+    OtroComponent,
+    ListarTicketsComponent,
+    UpdateUserContrasenaComponent
   ],
   imports: [
     BrowserModule,
