@@ -12,22 +12,25 @@ import { UpdateClienteContrasenaComponent } from './components/update-cliente-co
 import { OtroComponent } from './components/otro/otro.component';
 import { ListarTicketsComponent } from './components/listar-tickets/listar-tickets.component';
 import { UpdateUserContrasenaComponent } from './components/update-user-contrasena/update-user-contrasena.component';
+import { AuthGuard } from './guards/auth.guard';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'register/:id', component: RegisterComponent},
-  {path: 'registerAdmin/:id', component: RegisterAdminComponent},
-  {path: 'usuarios', component: UsuariosComponent},
-  {path: 'tickets/:id', component: TicketsComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'usuariosNoFake', component: UsuariosNoFakeComponent},
-  {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent},
-  {path: 'updateusercontrasena/:id', component: UpdateUserContrasenaComponent},
-  {path: 'listarTickets', component: ListarTicketsComponent},
+  {path: 'home', component: HomeComponent, canActivate:[AuthGuard]},
+  {path: 'register/:id', component: RegisterComponent,canActivate:[AuthGuard]},
+  {path: 'registerAdmin/:id', component: RegisterAdminComponent ,canActivate:[AuthGuard]},
+  {path: 'usuarios', component: UsuariosComponent,canActivate:[AuthGuard]},
+  {path: 'tickets/:id', component: TicketsComponent,canActivate:[AuthGuard]},
+  {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
+  {path: 'usuariosNoFake', component: UsuariosNoFakeComponent,canActivate:[AuthGuard]},
+  {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent,canActivate:[AuthGuard]},
+  {path: 'updateusercontrasena/:id', component: UpdateUserContrasenaComponent,canActivate:[AuthGuard]},
+  {path: 'listarTickets', component: ListarTicketsComponent,canActivate:[AuthGuard]},
   {path: 'otro', component: OtroComponent},
+  {path: 'navbar', component: NavbarComponent},
   {path: '**', redirectTo:'otro'}
 ];
 

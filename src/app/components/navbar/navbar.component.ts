@@ -17,8 +17,10 @@ export class NavbarComponent implements OnInit {
   getAuth(){
     if(localStorage.getItem('auth') == 'true'){
       this.islogged = true;
+      
     }else{
       this.islogged = false;
+    
     }
   }
 

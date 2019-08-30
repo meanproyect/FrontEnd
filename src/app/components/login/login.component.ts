@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoginModels } from 'src/app/models/login-models';
 import * as jwt_decode from 'jwt-decode';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,7 @@ import * as jwt_decode from 'jwt-decode';
 export class LoginComponent implements OnInit {
   login: LoginModels;
 
-  constructor(public rest: LoginService, private router: Router, private params: ActivatedRoute) {
+  constructor(public rest: LoginService, private router: Router, private location: Location) {
     this.rest.login(this.login);
     this.login = new LoginModels('', '');
   }
@@ -33,8 +34,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', res.token);
           let token = localStorage.getItem('token');
           let toke1 = jwt_decode(token)
-          localStorage.setItem('role', toke1.role);
           localStorage.setItem('auth','true');
+          localStorage.setItem('role', toke1.role);
           this.router.navigateByUrl('home');
         }
 

@@ -1,8 +1,8 @@
-<div class="Fondo">
+<div class="Fondo" >
 <div class="simple-admin" >
   <div data-component="sidebar">
     <div class="sidebar">
-      <ul class="list-group flex-column d-inline-block first-menu">
+      <ul class="list-group flex-column d-inline-block first-menu" >
         <!-- ============== GRUPO 1 ============== -->
         <li class="list-group-item py-2">
           <a>
@@ -130,7 +130,7 @@
                     font-weight: bold;">Perfil</a>
           </a>
         </li>
-        <li class="list-group-item py-2">
+        <li *ngIf = "islogged" class="list-group-item py-2">
           <a (click)=" onLogout()">
             <img src="https://images.vexels.com/media/users/3/147101/isolated/preview/b4a49d4b864c74bb73de63f080ad7930-bot--n-de-perfil-de-instagram-by-vexels.png" height="40"
               class="mr-4">
