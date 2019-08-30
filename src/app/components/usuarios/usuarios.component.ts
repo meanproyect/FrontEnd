@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class UsuariosComponent implements OnInit {
   client: ClientModels;
   clientes = [];
+  search: string;
 
   constructor(public rest: ClientService, private router: Router) { }
 
@@ -25,6 +26,20 @@ export class UsuariosComponent implements OnInit {
       this.clientes = res.client;
     });
   }
+
+  Buscar() {
+    let clienteSearch = this.clientes.filter(buscar => {
+      return (buscar.nameClient.indexOf(this.search) > -1 ||
+      buscar.clientCode.indexOf(this.search) > -1);
+    })
+    console.log(clienteSearch);
+    if (this.search == "") {
+      this.getClients()
+    } else {
+      this.clientes = clienteSearch;
+    }
+  }
+
   updateClients(client){
     this.router.navigateByUrl('register/'+client._id);
   }

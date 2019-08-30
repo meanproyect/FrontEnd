@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class UsuariosNoFakeComponent implements OnInit {
   admin: AdministratrModel;
   administrators = [];
+  search: string;
 
 
   constructor(public rest: AdministratorService, private router: Router) {
@@ -29,6 +30,20 @@ export class UsuariosNoFakeComponent implements OnInit {
       this.administrators = res.users;
     });
   }
+
+  Buscar() {
+    let adminSearch = this.administrators.filter(buscar => {
+      return (buscar.name.indexOf(this.search) > -1 ||
+      buscar.code.indexOf(this.search) > -1);
+    })
+    console.log(adminSearch);
+    if (this.search == "") {
+      this.getAdministrators()
+    } else {
+      this.administrators = adminSearch;
+    }
+  }
+
   updateAdministratorPassword(admin){
     this.router.navigateByUrl('registerAdmin/'+admin._id);
   }
