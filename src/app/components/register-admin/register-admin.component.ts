@@ -30,6 +30,7 @@ export class RegisterAdminComponent implements OnInit {
   }
 
   onSubmit() {
+    //buscamos la id y si hay id se puede actualizar
     if (this.params.snapshot.params.id != ':id') {
       this.rest.updateAdministrator(this.params.snapshot.params.id, this.admin).subscribe(res =>{
         if(res.message == 'Error al actualizar'){
@@ -47,6 +48,7 @@ export class RegisterAdminComponent implements OnInit {
               text: 'Actualizado correactamente!',
               timer:2000
             });
+            this.router.navigateByUrl('usuariosNoFake')
           }else if(res.message =='Debes de ingresar la contraseña obligatoriamente'){
             Swal.fire({
               type: 'error',
@@ -58,6 +60,7 @@ export class RegisterAdminComponent implements OnInit {
         }
       })
     } else {
+      //Nos sirve para poder guardar si no encuntra la id 
       this.rest.setAdministrator(this.admin).subscribe(res => {
         if (res.message == 'Ya esta registrado el usuario') {
           Swal.fire({

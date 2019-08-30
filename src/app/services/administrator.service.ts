@@ -38,6 +38,12 @@ export class AdministratorService {
       map(this.extractData)
     )
   }
+  updateAdministratorDatos(id,update_user): Observable<any>{
+    let params = JSON.stringify(update_user);
+    return this.http.put(this.endpoint + '/Update-User-datos/'+id, params, this.httpOptions).pipe(
+      map(this.extractData)
+    )
+  }
   deleteAdministrator(id): Observable<any>{
     return this.http.put(this.endpoint + '/delete-user/' + id, this.httpOptions).pipe(
       map(this.extractData)

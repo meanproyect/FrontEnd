@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
             title: 'Error',
             text: 'Error al actualizar',
             timer: 2000
-          })
+          });
         } else {
           if (res.client && res.client._id) {
             Swal.fire({
@@ -47,7 +47,15 @@ export class RegisterComponent implements OnInit {
               title: 'Actualizado',
               text: 'Se ha actualizado exitosamente',
               timer: 2000
-            })
+            });
+            this.router.navigateByUrl('usuarios');
+          }else if( res.message == 'Debes de llenar el campo de contraseña'){
+            Swal.fire({
+              type: 'error',
+              title: 'Error',
+              text: 'Debes de llenar el campo de contraseña',
+              timer: 2000
+            });
           }
         }
       })

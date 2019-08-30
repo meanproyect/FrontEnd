@@ -38,6 +38,12 @@ export class ClientService {
       map(this.extractData)
     );
   }
+  updateClientDatos(id,updateClient):Observable<any>{
+    let params = JSON.stringify(updateClient);
+    return this.http.put(this.endpoint + '/Update-Client-Datos/' + id,params, this.httpOptions).pipe(
+      map(this.extractData)
+    )
+  }
   deleteClient(id): Observable<any>{
     return this.http.put(this.endpoint + '/Delete-Client/' + id, this.httpOptions).pipe(
       map(this.extractData)
