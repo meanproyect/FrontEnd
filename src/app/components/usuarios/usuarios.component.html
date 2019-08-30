@@ -22,28 +22,28 @@
         <hr style="background-color: ivory;"><br>
         <div class="row"><br>
           <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"
-            *ngFor='let client of clientes'>
-            <div class="row">
+            *ngFor='let client of clientes' > 
+            <div class="row" >
               <div class="col-md-4">
                 <img style="padding: 25px"
                   src="https://cdn.pixabay.com/photo/2016/03/31/20/37/client-1295901_960_720.png" class="card-img">
               </div>
               <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title text"  style="font-family: 'Montserrat';">Cliente: {{client.nameClient}}</h5>
+                <div class="card-body" >
+                  <h5 class="card-title text"  style="font-family: 'Montserrat';">{{client.nameClient}}</h5>
                   <p class="card-text text-gray"><i class="fa fa-globe"
-                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> País:
+                      style="font-size:16px; color: rgb(241, 236, 236); margin-right: 3px;"></i> País:
                     {{client.country}}</p>
                   <p class="card-text text-gray"><i class="fa fa-user"
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Rol: {{client.role}}
                   </p>
-                  <p class="card-text text-gray"><i class="fa fa-id-card"
+                  <p class="card-text text-gray"><i class="fa fa-cog"
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de usuario:
                     {{client.clientCode}}</p>
                   <br><br><br>
                   <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" (click)="updateClientsDatos(client)">Actualizar Datos Personales</button>
                   <button type="button" class="btn btn-outline-success" style="margin: 10px" (click)="updateClients(client)" >Actualizar Contraseña</button>
-                  <button type="button" class="btn btn-outline-danger"  style="width: 107px;" (click)="deleteClient(client)">Eliminar</button>
+                  <button type="button" class="btn btn-outline-danger"  style="width: auto;" (click)="deleteClient(client)">Eliminar</button>
                 </div>
                 </div>
               </div>

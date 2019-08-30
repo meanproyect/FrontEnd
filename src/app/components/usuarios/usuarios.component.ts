@@ -29,8 +29,8 @@ export class UsuariosComponent implements OnInit {
 
   Buscar() {
     let clienteSearch = this.clientes.filter(buscar => {
-      return (buscar.nameClient.indexOf(this.search) > -1 ||
-      buscar.clientCode.indexOf(this.search) > -1);
+      return (buscar.nameClient.indexOf(this.search.toUpperCase()) > -1 ||
+      buscar.clientCode.indexOf(this.search.toUpperCase()) > -1);
     })
     console.log(clienteSearch);
     if (this.search == "") {

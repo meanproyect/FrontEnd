@@ -84,12 +84,3 @@ transform: scale(1.05);
 transition: transform .7s;
 }
 
-
-.Fondo{
-  height:100%;
-  width:100%;
-  background: rgb(171,221,222);
-  background: linear-gradient(0deg, rgba(171,221,222,1) 0%, rgba(205,229,230,1) 14%, rgba(232,255,255,1) 25%, rgba(255,255,255,1) 100%);
-  background-size:100% 100%;
-  position: relative;
-}

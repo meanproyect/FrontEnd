@@ -33,8 +33,8 @@ export class UsuariosNoFakeComponent implements OnInit {
 
   Buscar() {
     let adminSearch = this.administrators.filter(buscar => {
-      return (buscar.name.indexOf(this.search) > -1 ||
-      buscar.code.indexOf(this.search) > -1);
+      return (buscar.name.indexOf(this.search.toUpperCase()) > -1 ||
+      buscar.code.indexOf(this.search.toUpperCase()) > -1);
     })
     console.log(adminSearch);
     if (this.search == "") {

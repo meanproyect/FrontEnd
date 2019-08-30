@@ -23,6 +23,7 @@ h2 {
 .container{
   padding-top: 50px;
   padding-bottom: 7%;
+  
 }
 
 .card{
@@ -82,4 +83,8 @@ label{
 .card:hover{
 transform: scale(1.05);
 transition: transform .7s;
+}
+
+.form-control{
+  text-transform: uppercase;
 }

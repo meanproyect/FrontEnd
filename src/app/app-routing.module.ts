@@ -26,7 +26,9 @@ const routes: Routes = [
   {path: 'usuariosNoFake', component: UsuariosNoFakeComponent},
   {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent},
   {path: 'updateusercontrasena/:id', component: UpdateUserContrasenaComponent},
-  {path: 'listarTickets', component: ListarTicketsComponent}
+  {path: 'listarTickets', component: ListarTicketsComponent},
+  {path: 'otro', component: OtroComponent},
+  {path: '**', redirectTo:'otro'}
 ];
 
 @NgModule({
