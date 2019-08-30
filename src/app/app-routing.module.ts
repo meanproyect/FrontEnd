@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'register/:id', component: RegisterComponent},
   {path: 'registerAdmin/:id', component: RegisterAdminComponent},
   {path: 'usuarios', component: UsuariosComponent},
-  {path: 'tickets', component: TicketsComponent},
+  {path: 'tickets/:id', component: TicketsComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'usuariosNoFake', component: UsuariosNoFakeComponent},
   {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent},
