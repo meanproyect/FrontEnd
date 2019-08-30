@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
           let token = localStorage.getItem('token');
           let toke1 = jwt_decode(token)
           localStorage.setItem('role', toke1.role);
+          localStorage.setItem('auth','true');
           this.router.navigateByUrl('home');
         }
 
