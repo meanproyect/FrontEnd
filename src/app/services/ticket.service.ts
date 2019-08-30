@@ -27,20 +27,27 @@ export class TicketService {
       map(this.extracData)
     )
   }
-  setTicket(save_ticket){
+  setTicket(save_ticket):Observable<any>{
     let params = JSON.stringify(save_ticket);
+    console.log(params);
     return this.htpp.post(this.endpoint + '/Save-Ticket', params, this.httpOptions).pipe(
       map(this.extracData)
     )
   }
-  updateTicket(id, update_ticket){
+  updateTicket(id, update_ticket):Observable<any>{
     let params = JSON.stringify(update_ticket);
+    console.log(params);
     return this.htpp.put(this.endpoint + '/Update-Ticket/' + id, params, this.httpOptions).pipe(
       map(this.extracData)
     )
   }
-  deleteTicket(id){
+  deleteTicket(id): Observable<any>{
     return this.htpp.put(this.endpoint + '/Delete-ticket/'+ id, this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
+  buscarTicket(id): Observable<any>{
+    return this.htpp.get(this.endpoint+ '/Buscar-Ticket/'+id,this.httpOptions).pipe(
       map(this.extracData)
     )
   }
