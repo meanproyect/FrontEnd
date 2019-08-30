@@ -10,9 +10,9 @@
       <div class="cajita form-row">
         <div class="input-group mb-3 backdiv">
           <input class="form-control" style="z-index: 0;" type="text" #myInput [(ngModel)]="search" (input)="Buscar()"
-          name="search" placeholder="Ingresa a la persona que deseas buscar">
+          name="search" placeholder="Ingresa el nombre del Usuario que deseas buscar">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
+            <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit" (click)="Buscar()"><i class='fa fa-search'
                 style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
           </div>
         </div>
@@ -45,7 +45,7 @@
                   <br><br><br>
                   <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" (click)="updateAdministrator(admin)">Actualizar Datos Personales</button>
                   <button type="button" class="btn btn-outline-success" style="margin: 10px" (click)="updateAdministratorPassword(admin)">Actualizar Contraseña</button>
-                  <button type="button" class="btn btn-outline-danger" style="width: 107px;">Eliminar</button>
+                  <button type="button" class="btn btn-outline-danger" style="width: 107px;" (click)="deleteAdministrator(admin)">Eliminar</button>
                 </div>
               </div>
             </div>

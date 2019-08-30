@@ -10,28 +10,28 @@ main{
 	align-items: center;
     font-family: 'Merriweather Sans', sans-serif;
 }
-        #errorText{
-            font-size: 22px;
-            margin: 14px 0
-        }
-        #errorLink{
-            font-size: 20px;
-            padding: 12px;
-            border: 1px solid;
-            color: #000;
-            background-color: transparent;
-            text-decoration: none;
-            transition: all 0.5s ease-in-out;
-            &:hover, &:active{
-                color: #fff;
-                background: #000
-            }
-        }
-        #g6219{
-            transform-origin: 85px 4px;
-            animation: an1 12s .5s infinite ease-out
-            }
 
+#errorText{
+	font-size: 22px;
+	margin: 14px 0
+}
+
+#errorLink{
+	font-size: 20px;
+	padding: 12px;
+	border: 1px solid;
+	color: #000;
+	background-color: transparent;
+	text-decoration: none;
+	transition: all 0.5s ease-in-out;
+}
+			
+
+
+#g6219{
+transform-origin: 85px 4px;
+animation: an1 12s .5s infinite ease-out
+}
 
 @keyframes an1{
 	0%{
@@ -58,4 +58,34 @@ main{
 		transform: rotate(-3deg)}
 	100%{
         transform: rotate(0)}
-      }  
+}  
+
+#form_button {
+	background: none;
+	border: solid 2px #474544;
+	color: #474544;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 0.875em;
+	font-weight: bold;
+	outline: none;
+	padding: 20px 35px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s;
+	  -moz-transition: all 0.3s;
+	  -ms-transition: all 0.3s;
+	  -o-transition: all 0.3s;
+	  transition: all 0.3s;
+  }
+
+#form_button:hover {
+	background: #474544;
+	color: #F2F3EB;
+  }   
+
+  @media screen and (max-width: 480px) {
+	#form_button {
+	  padding: 15px 25px;
+	}
+  }

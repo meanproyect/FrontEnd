@@ -47,7 +47,7 @@ export class UsuariosComponent implements OnInit {
     this.router.navigateByUrl('updateclientecontrasena/'+client._id);
   }
   deleteClient(client){
-    if(confirm("Quieres eliminar el cliente?")){
+    if(confirm("¿Deseas eliminar este cliente?")){
       this.rest.deleteClient(client._id).subscribe(res =>{
         if(res.message == 'Error al eliminar'){
           Swal.fire({
