@@ -77,7 +77,7 @@ export class RegisterAdminComponent implements OnInit {
               text: 'Fue guardado exitosamente',
               timer: 2000
             })
-            this.router.navigateByUrl('usuarios');
+            this.router.navigateByUrl('usuariosNoFake');
           } else if (res.message == 'Debes de ingresar la informacion en todos los campos') {
             Swal.fire({
               type: 'error',

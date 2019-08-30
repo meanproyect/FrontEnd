@@ -8,8 +8,8 @@
     <form>
       <div class="cajita form-row">
         <div class="input-group mb-3 backdiv">
-          <input class="form-control" style="z-index: 0;" name="search" type="text"
-            placeholder="Ingresa a la persona que deseas buscar">
+          <input class="form-control" style="z-index: 0;" #myInput [(ngModel)]="search" (input)="Buscar()"
+          name="search" type="text" placeholder="Ingresa a la persona que deseas buscar">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
                 style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
@@ -30,7 +30,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title text">Cliente: {{client.nameClient}}</h5>
+                  <h5 class="card-title text"  style="font-family: 'Montserrat';">Cliente: {{client.nameClient}}</h5>
                   <p class="card-text text-gray"><i class="fa fa-globe"
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> País:
                     {{client.country}}</p>
