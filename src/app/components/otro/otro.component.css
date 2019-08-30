@@ -66,12 +66,12 @@ animation: an1 12s .5s infinite ease-out
 	color: #474544;
 	cursor: pointer;
 	display: inline-block;
-	font-family: 'Helvetica', Arial, sans-serif;
-	font-size: 0.875em;
+	font-family: 'Merriweather Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 14px;
 	font-weight: bold;
 	outline: none;
 	padding: 20px 35px;
-	text-transform: uppercase;
 	-webkit-transition: all 0.3s;
 	  -moz-transition: all 0.3s;
 	  -ms-transition: all 0.3s;
