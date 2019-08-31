@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { TicketModel } from 'src/app/models/ticket-model';
 import { TicketService } from 'src/app/services/ticket.service';
-
+import * as jwt_decode from 'jwt-decode';
 @Component({
   selector: 'app-tickets',
   templateUrl: './tickets.component.html',
@@ -14,7 +14,7 @@ export class TicketsComponent implements OnInit {
 
   constructor(public rest: TicketService, private router: Router, private params: ActivatedRoute) {
     this.rest.setTicket(this.ticket);
-    this.ticket = new TicketModel('','','');
+    this.ticket = new TicketModel('','','','');
    }
 
   ngOnInit() {
@@ -24,7 +24,7 @@ export class TicketsComponent implements OnInit {
         this.ticket.description = res.ticket.description;
       })
     }else{
-      this.ticket = new TicketModel('','','');
+      this.ticket = new TicketModel('','','','');
     }
   }
   onSubmit(){
@@ -49,7 +49,9 @@ export class TicketsComponent implements OnInit {
         }
       });
     }else{
-      console.log("Hola ")
+      let toke = localStorage.getItem('token');
+      let token1 = jwt_decode(toke);
+      this.ticket.client = token1.sub;
       this.rest.setTicket(this.ticket).subscribe(res =>{
         console.log(res);
         if(res.message == 'Error al guardar ticket'){
