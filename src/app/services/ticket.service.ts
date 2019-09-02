@@ -45,9 +45,14 @@ export class TicketService {
       map(this.extracData)
     )
   }
-  buscarTicket(client): Observable<any>{
+  buscarTicket(id): Observable<any>{
+    return this.htpp.get(this.endpoint+ '/Buscar-Ticket/'+id, this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
+  TicketAsignado(client):Observable<any>{
     let params = JSON.stringify(client);
-    return this.htpp.post(this.endpoint+ '/Buscar-Ticket', params, this.httpOptions).pipe(
+    return this.htpp.post(this.endpoint + '/Assigned-Ticket', params, this.httpOptions).pipe(
       map(this.extracData)
     )
   }
