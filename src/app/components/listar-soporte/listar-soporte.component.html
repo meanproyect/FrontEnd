@@ -22,7 +22,7 @@
       <div class="col-md-12 col-sm-12">
         <hr style="background-color: ivory;"><br>
         <div class="row"><br>
-          <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"> 
+          <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;" *ngFor='let support of supports'> 
             <div class="row" >
               <div class="col-md-4">
                 <img style="padding: 25px"
@@ -30,16 +30,16 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body" >
-                  <h5 class="card-title text"  style="font-family: 'Montserrat';">{{soporte.name}}</h5>
+                  <h5 class="card-title text"  style="font-family: 'Montserrat';">{{support.name}}</h5>
                   <p class="card-text text-gray"><i class="fa fa-globe"
                       style="font-size:16px; color: rgb(241, 236, 236); margin-right: 3px;"></i> Apellido:
-                    {{soporte.surname}}</p>
+                    {{support.surname}}</p>
                   <p class="card-text text-gray"><i class="fa fa-user"
-                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Cliente Asignado: {{soporte.cliente}}
+                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Cliente Asignado: {{support.client}}
                   </p>
                   <p class="card-text text-gray"><i class="fa fa-cog"
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de Tecnico:
-                    {{soporte.code}}</p>
+                    {{support.code}}</p>
                   <br><br><br>
                   <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px">Actualizar Datos Personales</button>
                   <button type="button" class="btn btn-outline-success" style="margin: 10px">Actualizar Contraseña</button>
