@@ -33,7 +33,7 @@ const routes: Routes = [
   {path: 'listarTickets', component: ListarTicketsComponent,canActivate:[AuthGuard]},
   {path: 'otro', component: OtroComponent},
   {path: 'navbar', component: NavbarComponent},
-  {path: 'soporte', component: SoporteComponent},
+  {path: 'soporte/:id', component: SoporteComponent},
   {path: 'listarSoporte', component: ListarSoporteComponent},
   {path: '**', redirectTo:'otro'}
 ];

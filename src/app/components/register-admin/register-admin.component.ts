@@ -3,7 +3,7 @@ import { AdministratrModel } from 'src/app/models/administratr-model';
 import { AdministratorService } from 'src/app/services/administrator.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
-import { SupportModel } from 'src/app/models/support-model';
+
 @Component({
   selector: 'app-register-admin',
   templateUrl: './register-admin.component.html',
