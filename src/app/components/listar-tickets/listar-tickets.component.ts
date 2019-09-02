@@ -19,6 +19,7 @@ export class ListarTicketsComponent implements OnInit {
 
   getTicket(){
     this.rest.getTicket().subscribe(res =>{
+      console.log(res);
       this.tickes = res.ticket;
     })
   }
