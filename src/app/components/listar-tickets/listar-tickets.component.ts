@@ -11,6 +11,7 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 export class ListarTicketsComponent implements OnInit {
   ticket: TicketModel;
   tickes: [];
+  search: string;
   constructor(private rest: TicketService) { }
 
   ngOnInit() {
