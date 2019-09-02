@@ -4,6 +4,8 @@ import { SupportService } from 'src/app/services/support.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { AdministratorDatosModels } from 'src/app/models/administrator-datos-models';
+import { ClientService } from 'src/app/services/client.service';
+import { ClientModels } from 'src/app/models/client-models';
 
 @Component({
   selector: 'app-soporte',
@@ -12,7 +14,9 @@ import { AdministratorDatosModels } from 'src/app/models/administrator-datos-mod
 })
 export class SoporteComponent implements OnInit {
   support: SupportModel;
-  constructor(public rest: SupportService, private router: Router, private params: ActivatedRoute) {
+  client: ClientModels;
+  clients: [];
+  constructor(public rest: SupportService, private router: Router, private params: ActivatedRoute, private restClient: ClientService) {
     this.rest.setSupport(this.support);
     this.support = new SupportModel('', '', '', '', '');
   }
@@ -27,6 +31,9 @@ export class SoporteComponent implements OnInit {
     } else {
       this.support = new SupportModel('', '', '', '', '');
     }
+    this.restClient.getClients().subscribe(res =>{
+      this.clients = res.client;
+    })
   }
 
 
