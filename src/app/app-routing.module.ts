@@ -35,10 +35,10 @@ const routes: Routes = [
   {path: 'listarTickets', component: ListarTicketsComponent,canActivate:[AuthGuard]},
   {path: 'otro', component: OtroComponent},
   {path: 'navbar', component: NavbarComponent},
-  {path: 'soporte/:id', component: SoporteComponent},
-  {path: 'listarSoporte', component: ListarSoporteComponent},
-  {path: 'listarTicketsCliente', component: ListarTicketsClienteComponent},
-  {path: 'listarTicketsSoporte', component: ListarTicketsSoporteComponent},
+  {path: 'soporte/:id', component: SoporteComponent,canActivate:[AuthGuard]},
+  {path: 'listarSoporte', component: ListarSoporteComponent,canActivate:[AuthGuard]},
+  {path: 'listarTicketsCliente', component: ListarTicketsClienteComponent, canActivate:[AuthGuard]},
+  {path: 'listarTicketsSoporte', component: ListarTicketsSoporteComponent, canActivate:[AuthGuard]},
   {path: '**', redirectTo:'otro'}
 ];
 
