@@ -37,8 +37,8 @@
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Descripción: {{ticket.description}}
                     </p>
                   <br><br><br>
-                  <button type="button" class="btn btn-outline-primary btn-block">Actualizar Datos del Ticket</button>
-                  <button type="button" class="btn btn-outline-danger btn-block">Eliminar</button>
+                  <button type="button" class="btn btn-outline-primary btn-block" (click)=" updateTicketClient(ticket)">Actualizar Datos del Ticket</button>
+                  <button type="button" class="btn btn-outline-danger btn-block" (click)="deleteTicketClient(ticket)">Eliminar</button>
                 </div>
               </div>
             </div>
