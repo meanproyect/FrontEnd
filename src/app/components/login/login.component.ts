@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
   Login() {
     this.rest.login(this.login).subscribe(res => {
-      if (res.message == 'No se ha podiddo loguear') {
+      if (res.message == 'No se ha podido loguear') {
         Swal.fire({
           type: 'error',
           title: 'Error',
