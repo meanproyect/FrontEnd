@@ -16,6 +16,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SoporteComponent } from './components/soporte/soporte.component';
 import { ListarSoporteComponent } from './components/listar-soporte/listar-soporte.component';
+import { ListarTicketsClienteComponent } from './components/listar-tickets-cliente/listar-tickets-cliente.component';
+import { ListarTicketsSoporteComponent } from './components/listar-tickets-soporte/listar-tickets-soporte.component';
 
 
 const routes: Routes = [
@@ -35,6 +37,8 @@ const routes: Routes = [
   {path: 'navbar', component: NavbarComponent},
   {path: 'soporte', component: SoporteComponent},
   {path: 'listarSoporte', component: ListarSoporteComponent},
+  {path: 'listarTicketsCliente', component: ListarTicketsClienteComponent},
+  {path: 'listarTicketsSoporte', component: ListarTicketsSoporteComponent},
   {path: '**', redirectTo:'otro'}
 ];
 
