@@ -23,6 +23,8 @@ import { UpdateClienteContrasenaComponent } from './components/update-cliente-co
 import { OtroComponent } from './components/otro/otro.component';
 import { ListarTicketsComponent } from './components/listar-tickets/listar-tickets.component';
 import { UpdateUserContrasenaComponent } from './components/update-user-contrasena/update-user-contrasena.component';
+import { SoporteComponent } from './components/soporte/soporte.component';
+import { ListarSoporteComponent } from './components/listar-soporte/listar-soporte.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { UpdateUserContrasenaComponent } from './components/update-user-contrase
     UpdateClienteContrasenaComponent,
     OtroComponent,
     ListarTicketsComponent,
-    UpdateUserContrasenaComponent
+    UpdateUserContrasenaComponent,
+    SoporteComponent,
+    ListarSoporteComponent
   ],
   imports: [
     BrowserModule,

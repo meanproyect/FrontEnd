@@ -1,0 +1,58 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+<div class='login'>
+  <br>
+  <h2 class="h3 mb-3 font-weight-normal">Soportes Tecnicos</h2>
+
+  <div class="container">
+    <form>
+      <div class="cajita form-row">
+        <div class="input-group mb-3 backdiv">
+          <input class="form-control" style="z-index: 0;" 
+          name="search" type="text" placeholder="Ingresa el nombre del Cliente que deseas buscar">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
+                style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <hr style="background-color: ivory;"><br>
+        <div class="row"><br>
+          <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"> 
+            <div class="row" >
+              <div class="col-md-4">
+                <img style="padding: 25px"
+                  src="https://i.pinimg.com/originals/b8/8f/73/b88f738a9b9b99dd2143868b34bf06aa.png" class="card-img">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body" >
+                  <h5 class="card-title text"  style="font-family: 'Montserrat';">{{soporte.name}}</h5>
+                  <p class="card-text text-gray"><i class="fa fa-globe"
+                      style="font-size:16px; color: rgb(241, 236, 236); margin-right: 3px;"></i> Apellido:
+                    {{soporte.surname}}</p>
+                  <p class="card-text text-gray"><i class="fa fa-user"
+                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Cliente Asignado: {{soporte.cliente}}
+                  </p>
+                  <p class="card-text text-gray"><i class="fa fa-cog"
+                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de Tecnico:
+                    {{soporte.code}}</p>
+                  <br><br><br>
+                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px">Actualizar Datos Personales</button>
+                  <button type="button" class="btn btn-outline-success" style="margin: 10px">Actualizar Contraseña</button>
+                  <button type="button" class="btn btn-outline-danger"  style="width: auto;">Eliminar</button>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br>
+    <hr style="background-color: ivory;">
+  </div>
+
+
+  

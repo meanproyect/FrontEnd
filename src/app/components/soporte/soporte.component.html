@@ -1,0 +1,39 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+<div class="Fondo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-10">
+        <h2 class="h3 mb-3 font-weight-normal" style="color: black;">¡Ingresa los datos del Tecnico!</h2>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-md-6 mx-auto mt-5">
+        <form>
+          <div class="form-group">
+            <label style="color: black;">Nombre del Tecnico</label>
+            <input type="text" class="form-control" name="name" placeholder="Ingresa el nombre del tecnico">
+          </div>
+          <div class="form-group">
+            <label style="color: black">Apellido del Tecnico</label>
+            <input type="text" class="form-control" name="surname" placeholder="Ingresa el apellido del tecnico">
+          </div>
+          <div class="form-group">
+            <label style="color: black">Cliente a asignar</label>
+            <select class="form-control custom-select" id="cliente" name="cliente">
+              <option value="">Seleccionar el cliente que le asignaras a esta persona</option>
+              <option value="BANRURAL">Banrural</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label style="color: black">Contraseña del Tecnico</label>
+            <input type="password" class="form-control" name="password" placeholder="Ingresa la contraseña del Tecnico">
+          </div> <br>
+          <div class="submit" style="text-align: center;">
+              <input type="button" value="Registar Tecnico" id="form_button"/>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

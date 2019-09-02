@@ -14,6 +14,8 @@ import { ListarTicketsComponent } from './components/listar-tickets/listar-ticke
 import { UpdateUserContrasenaComponent } from './components/update-user-contrasena/update-user-contrasena.component';
 import { AuthGuard } from './guards/auth.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SoporteComponent } from './components/soporte/soporte.component';
+import { ListarSoporteComponent } from './components/listar-soporte/listar-soporte.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,8 @@ const routes: Routes = [
   {path: 'listarTickets', component: ListarTicketsComponent,canActivate:[AuthGuard]},
   {path: 'otro', component: OtroComponent},
   {path: 'navbar', component: NavbarComponent},
+  {path: 'soporte', component: SoporteComponent},
+  {path: 'listarSoporte', component: ListarSoporteComponent},
   {path: '**', redirectTo:'otro'}
 ];
 

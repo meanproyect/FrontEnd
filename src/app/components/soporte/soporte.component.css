@@ -1,0 +1,145 @@
+
+
+button {
+    overflow: visible;
+  }
+  
+  button, select {
+    text-transform: none;
+  }
+  
+  button,  select {
+    color: #5A5A5A;
+    font: inherit;
+    margin: 0;
+  }
+  
+  select {
+    background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+  
+  select::-ms-expand {
+    display: none;
+  }
+  
+  
+  #form_button {
+    background: none;
+    border: solid 2px #474544;
+    color: #474544;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 20px 35px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+  }
+  
+  #form_button:hover {
+    background: #474544;
+    color: #F2F3EB;
+  }   
+  
+  @media screen and (max-width: 480px) {
+    #form_button {
+      padding: 15px 25px;
+    }
+  }
+  
+  h2 {
+    color: #6D7781;
+    font-family: "Sofia", cursive;
+    font-size: 15px;
+    font-weight: bold;
+    font-size: 3.6em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .text {
+    color: #6D7781;
+    font-family: "Sofia", cursive;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  
+  .transparente{
+    opacity: 0.8;
+    -moz-opacity: 0.5;
+    filter: alpha(opacity=80); 
+    -khtml-opacity: 1.5;
+    }
+  
+  .container{ 
+    padding-top: 50px;
+    padding-bottom: 7%;
+    margin: 0 0 0 100px;    
+  }
+  
+  .titleMain{
+    font-size: 50px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .backdiv{
+    padding: 7px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    width: 550px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .container{
+        padding-top: 75px;
+        margin: 0 0 0 0; 
+    }
+  } 
+  
+  
+  .text{
+    color: black;
+  }
+  
+  .text-gray{
+    color: rgb(158, 158, 158);
+    margin-bottom: 0px;
+  }
+  
+  .titleMain{
+    font-size: 50px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  
+  
+  .espacio{
+    padding-top: 30px;
+  }
+  
+  .centrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
