@@ -41,9 +41,9 @@
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de Tecnico:
                     {{support.code}}</p>
                   <br><br><br>
-                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px">Actualizar Datos Personales</button>
-                  <button type="button" class="btn btn-outline-success" style="margin: 10px">Actualizar Contraseña</button>
-                  <button type="button" class="btn btn-outline-danger"  style="width: auto;">Eliminar</button>
+                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" (click)="updateSupports(support)">Actualizar Datos Personales</button>
+                  <button type="button" class="btn btn-outline-success" style="margin: 10px" (click)="updateSupportsContrasena(support)">Actualizar Contraseña</button>
+                  <button type="button" class="btn btn-outline-danger"  style="width: auto;" (click)="deleteSupport(support)">Eliminar</button>
                 </div>
                 </div>
               </div>

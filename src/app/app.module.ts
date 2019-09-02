@@ -27,6 +27,7 @@ import { SoporteComponent } from './components/soporte/soporte.component';
 import { ListarSoporteComponent } from './components/listar-soporte/listar-soporte.component';
 import { ListarTicketsSoporteComponent } from './components/listar-tickets-soporte/listar-tickets-soporte.component';
 import { ListarTicketsClienteComponent } from './components/listar-tickets-cliente/listar-tickets-cliente.component';
+import { UpdateSoporteDatosComponent } from './components/update-soporte-datos/update-soporte-datos.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ListarTicketsClienteComponent } from './components/listar-tickets-clien
     SoporteComponent,
     ListarSoporteComponent,
     ListarTicketsSoporteComponent,
-    ListarTicketsClienteComponent
+    ListarTicketsClienteComponent,
+    UpdateSoporteDatosComponent
   ],
   imports: [
     BrowserModule,
