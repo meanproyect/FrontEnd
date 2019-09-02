@@ -3,6 +3,7 @@ import { AdministratrModel } from 'src/app/models/administratr-model';
 import { AdministratorService } from 'src/app/services/administrator.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-register-admin',
   templateUrl: './register-admin.component.html',
@@ -10,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class RegisterAdminComponent implements OnInit {
   admin: AdministratrModel;
-
+    
   constructor(public rest: AdministratorService, private router: Router, private params: ActivatedRoute) {
     this.rest.setAdministrator(this.admin);
     this.admin = new AdministratrModel('', '', '', '');
