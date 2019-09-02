@@ -4,7 +4,7 @@
     <div class="sidebar">
       <ul class="list-group flex-column d-inline-block first-menu" >
         <!-- ============== GRUPO 1 ============== -->
-        <li class="list-group-item py-2">
+        <li class="list-group-item py-2" >
           <a routerLink="/home">
             <img src="http://img.icons8.com/cotton/2x/home--v1.png" height="40"
               class="mr-4">
@@ -18,7 +18,7 @@
 
         <!-- ============== GRUPO 2 ============== -->
 
-        <li class="list-group-item py-2">
+        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRADOR"'>
           <a >
             <img src="https://cdn.pixabay.com/photo/2016/03/31/20/37/client-1295901_960_720.png" height="40"
               class="mr-4">
@@ -52,7 +52,7 @@
 
         <!-- ============== GRUPO 3 ============== -->
 
-        <li class="list-group-item py-2">
+        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRADOR"'>
           <a>
             <img src="https://image.flaticon.com/icons/png/512/149/149071.png" height="40"
               class="mr-4">
@@ -96,8 +96,8 @@
                     font-size: 0.875em;
                     font-weight: bold;">Tickets</a>
             </a>
-            <ul class="list-group flex-column d-inline-block submenu svg-submenu">
-              <li class="list-group-item">
+            <ul class="list-group flex-column d-inline-block submenu svg-submenu" >
+              <li class="list-group-item" *ngIf='rol == "CLIENT"'>
                 <a href="#" routerLink="/tickets/:id" >
                   <img src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
                     height="40" width="40" class="ml-2 mr-4 d-inline-block">
@@ -106,7 +106,7 @@
                   </div>
                 </a>
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item" *ngIf='rol == "ADMINISTRADOR"'>
                 <a href="#" routerLink="/listarTickets">
                   <img src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
                     height="40" width="40" class="ml-2 mr-4 d-inline-block">
@@ -115,7 +115,7 @@
                   </div>
                 </a>
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item" *ngIf='rol == "CLIENT"'>
                   <a href="#" routerLink="/listarTicketsCliente">
                     <img src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
                       height="40" width="40" class="ml-2 mr-4 d-inline-block">
@@ -124,7 +124,7 @@
                     </div>
                   </a>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item" *ngIf='rol == "SUPPORT"'>
                     <a href="#" routerLink="/listarTicketsSoporte">
                       <img src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
                         height="40" width="40" class="ml-2 mr-4 d-inline-block">
@@ -139,7 +139,7 @@
 
         <!-- ============== GRUPO 5 ============== -->
 
-        <li class="list-group-item py-2">
+        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRADOR"'>
           <a>
             <img src="https://i.pinimg.com/originals/b8/8f/73/b88f738a9b9b99dd2143868b34bf06aa.png" height="40"
               class="mr-4">

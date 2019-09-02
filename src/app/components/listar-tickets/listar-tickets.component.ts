@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketModel } from 'src/app/models/ticket-model';
+import { TicketService } from 'src/app/services/ticket.service';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-listar-tickets',
@@ -9,9 +11,15 @@ import { TicketModel } from 'src/app/models/ticket-model';
 export class ListarTicketsComponent implements OnInit {
   ticket: TicketModel;
   tickes: [];
-  constructor() { }
+  constructor(private rest: TicketService) { }
 
   ngOnInit() {
+    this.getTicket();
   }
 
+  getTicket(){
+    this.rest.getTicket().subscribe(res =>{
+      this.tickes = res.ticket;
+    })
+  }
 }

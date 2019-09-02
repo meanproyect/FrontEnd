@@ -32,10 +32,7 @@ export class LoginComponent implements OnInit {
       } else {
         if (res.token) {
           localStorage.setItem('token', res.token);
-          let token = localStorage.getItem('token');
-          let toke1 = jwt_decode(token)
           localStorage.setItem('auth','true');
-          localStorage.setItem('role', toke1.role);
           this.router.navigateByUrl('home');
         }
 

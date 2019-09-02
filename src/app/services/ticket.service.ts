@@ -9,12 +9,11 @@ import { map, retry } from 'rxjs/operators';
 export class TicketService {
   endpoint = 'http://localhost:3789/TicketPlusTI';
 
-  httpOptions ={
+  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
-
   constructor(private htpp: HttpClient) { }
   private extracData(res: Response){
     let body = res;
@@ -46,8 +45,9 @@ export class TicketService {
       map(this.extracData)
     )
   }
-  buscarTicket(id): Observable<any>{
-    return this.htpp.get(this.endpoint+ '/Buscar-Ticket/'+id,this.httpOptions).pipe(
+  buscarTicket(client): Observable<any>{
+    let params = JSON.stringify(client);
+    return this.htpp.post(this.endpoint+ '/Buscar-Ticket', params, this.httpOptions).pipe(
       map(this.extracData)
     )
   }
