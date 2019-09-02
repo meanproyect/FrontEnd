@@ -19,7 +19,7 @@ export class TicketsComponent implements OnInit {
 
   ngOnInit() {
     if(this.params.snapshot.params.id != ':id'){
-      this.rest.buscarTicket(this.params.snapshot.params.id != ':id').subscribe(res =>{
+      this.rest.buscarTicket(this.params.snapshot.params.id).subscribe(res =>{
         this.ticket.title = res.ticket.title;
         this.ticket.description = res.ticket.description;
       })
@@ -29,8 +29,12 @@ export class TicketsComponent implements OnInit {
   }
   onSubmit(){
     if(this.params.snapshot.params.id != ':id'){
-      this.rest.updateTicket(this.params.snapshot.params.id != ':id',this.ticket).subscribe(res =>{
-        if(res.message ='Error al actualizar'){
+      let toke = localStorage.getItem('token');
+      let token1 = jwt_decode(toke);
+      this.ticket.client = token1.sub;
+      this.ticket.status = 'ESPERA'
+      this.rest.updateTicket(this.params.snapshot.params.id,this.ticket).subscribe(res =>{
+        if(res.message =='Error al actualizar'){
           Swal.fire({
             type: 'error',
             title: 'Error',
@@ -45,6 +49,7 @@ export class TicketsComponent implements OnInit {
               text: 'Se ha actualizado correctamente',
               timer: 2000
             });
+            this.router.navigateByUrl('listarTicketsCliente');
           }
         }
       });
