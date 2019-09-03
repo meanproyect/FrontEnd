@@ -9,7 +9,7 @@
     <form>
       <div class="cajita form-row">
         <div class="input-group mb-3 backdiv">
-          <input class="form-control" style="z-index: 0;" 
+          <input class="form-control" style="z-index: 0;" #myInput [(ngModel)]="search" (input)="Buscar()"
           name="search" type="text" placeholder="Ingresa el nombre del Cliente que deseas buscar">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
@@ -26,7 +26,7 @@
             <div class="row" >
               <div class="col-md-4">
                 <img style="padding: 25px"
-                  src="https://i.pinimg.com/originals/b8/8f/73/b88f738a9b9b99dd2143868b34bf06aa.png" class="card-img">
+                  src="https://images.vexels.com/media/users/3/131312/isolated/preview/fdc5ab4d9908148b66be99ec3d5d119a-icono-de-agente-de-soporte-masculino-gris-by-vexels.png" class="card-img">
               </div>
               <div class="col-md-8">
                 <div class="card-body" >
@@ -41,9 +41,9 @@
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de Tecnico:
                     {{support.code}}</p>
                   <br><br><br>
-                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px">Actualizar Datos Personales</button>
-                  <button type="button" class="btn btn-outline-success" style="margin: 10px">Actualizar Contraseña</button>
-                  <button type="button" class="btn btn-outline-danger"  style="width: auto;">Eliminar</button>
+                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" (click)="updateSupports(support)">Actualizar Datos Personales</button>
+                  <button type="button" class="btn btn-outline-success" style="margin: 10px" (click)="updateSupportsContrasena(support)">Actualizar Contraseña</button>
+                  <button type="button" class="btn btn-outline-danger"  style="width: auto;" (click)="deleteSupport(support)">Eliminar</button>
                 </div>
                 </div>
               </div>

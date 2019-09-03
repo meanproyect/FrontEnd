@@ -11,7 +11,7 @@
       <div class="cajita form-row">
         <div class="input-group mb-3 backdiv">
           <input class="form-control" style="z-index: 0;" name="search" type="text"
-            placeholder="Ingresa el Ticket que desea buscar">
+            placeholder="Ingresa el Ticket que desea buscar"  #myInput [(ngModel)]="search" (input)="Buscar2()">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
                 style='font-size:12px; margin-right: 5px;'></i>Buscar</button>

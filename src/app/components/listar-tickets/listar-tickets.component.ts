@@ -10,7 +10,8 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 })
 export class ListarTicketsComponent implements OnInit {
   ticket: TicketModel;
-  tickes: [];
+  tickes: TicketModel[];
+  search: string;
   constructor(private rest: TicketService) { }
 
   ngOnInit() {
@@ -23,4 +24,19 @@ export class ListarTicketsComponent implements OnInit {
       this.tickes = res.ticket;
     })
   }
+
+  Buscar2() {
+    let ticketSearch = this.tickes.filter(buscar2 => {
+      return (buscar2.title.indexOf(this.search.toUpperCase()) > -1 ||
+      buscar2.description.indexOf(this.search.toUpperCase()) > -1);
+    })
+    console.log(ticketSearch);
+    if (this.search == "") {
+      this.getTicket()
+    } else {
+      this.tickes = ticketSearch;
+    }
+  }
+
+  
 }

@@ -38,63 +38,72 @@ export class SoporteComponent implements OnInit {
 
 
   onSubmit() {
+    console.log(this.support);
     if (this.params.snapshot.params.id != ':id') {
       this.rest.updateSupport(this.params.snapshot.params.id, this.support).subscribe(res => {
         if (res.message == 'Error al actualizar') {
           Swal.fire({
             type: 'error',
             title: 'Error',
-            text: 'Eror al Actualizar',
+            text: 'Error al actualizar',
             timer: 2000
-          })
-        }else{
-          if(res.support && res.support._id){
+          });
+        } else {
+          if (res.support && res.support._id) {
             Swal.fire({
               type: 'success',
-              title: 'Actulizando',
-              text: 'Actualizado correactamente!',
-              timer:2000
+              title: 'Actualizado',
+              text: 'Se ha actualizado exitosamente',
+              timer: 2000
             });
             this.router.navigateByUrl('listarSoporte');
-          }else if(res.message == 'Debes de ingresar la contraseña obligatoriamente'){
+          }else if( res.message == 'Debes de llenar el campo de contraseña'){
             Swal.fire({
               type: 'error',
               title: 'Error',
-              text: 'Debes de ingresar el campo de contraseña',
+              text: 'Debes de llenar el campo de contraseña',
               timer: 2000
-            })
+            });
           }
         }
       })
-    }else{
-      this.rest.setSupport(this.support).subscribe(res =>{
-        if(res.message == 'Ya esta registrado el usuario'){
+    } else {
+      this.rest.setSupport(this.support).subscribe(res => {
+        if (res.message == 'Debes de ingresar la información en todos los campos') {
           Swal.fire({
             type: 'error',
             title: 'Error',
-            text: 'El Usario ya se encuentra registrado',
+            text: 'Debes de ingresar todos los campos',
             timer: 2000
-          })
-        }else{
-          if(res.support && res.support._id){
+          });
+        } else {
+          if (res.support && res.support._id) {
             Swal.fire({
               type: 'success',
               title: 'Guardado',
-              text: 'Fue guardado exitosamente',
+              text: 'Se ha guardado correctamente',
               timer: 2000
-            })
+            });
             this.router.navigateByUrl('listarSoporte');
-          }else if(res.message == 'Debes de ingresar la informacion en todos los campos'){
+          } else if (res.message == 'Este Tecnico ya se ha registrado') {
             Swal.fire({
               type: 'error',
-              title: 'Campos',
-              text: 'Debes de llenar todos los campos',
+              title: 'Error',
+              text: 'El usuario ya esta registrado',
               timer: 2000
-            })
+            });
+          } else if (res.message == 'Error al guardar al Tecnico de soporte') {
+            Swal.fire({
+              type: 'error',
+              title: 'Error',
+              text: 'Error al guardar al tecnico de soporte',
+              timer: 2000
+            });
           }
         }
-      })
+      });
     }
+
   }
 
 }

@@ -19,6 +19,7 @@ import { ListarSoporteComponent } from './components/listar-soporte/listar-sopor
 import { ListarTicketsClienteComponent } from './components/listar-tickets-cliente/listar-tickets-cliente.component';
 import { ListarTicketsSoporteComponent } from './components/listar-tickets-soporte/listar-tickets-soporte.component';
 import { ListarTicketsTerminadosComponent } from './components/listar-tickets-terminados/listar-tickets-terminados.component';
+import { UpdateSoporteDatosComponent } from './components/update-soporte-datos/update-soporte-datos.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'usuariosNoFake', component: UsuariosNoFakeComponent,canActivate:[AuthGuard]},
   {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent,canActivate:[AuthGuard]},
   {path: 'updateusercontrasena/:id', component: UpdateUserContrasenaComponent,canActivate:[AuthGuard]},
+  {path: 'updateSoporteDatos/:id', component: UpdateSoporteDatosComponent,canActivate:[AuthGuard]},
   {path: 'listarTickets', component: ListarTicketsComponent,canActivate:[AuthGuard]},
   {path: 'otro', component: OtroComponent},
   {path: 'navbar', component: NavbarComponent},

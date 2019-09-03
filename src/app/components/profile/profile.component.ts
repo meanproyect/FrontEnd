@@ -2,12 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Profile } from 'src/app/models/profile';
 import { LoginService } from 'src/app/services/login.service';
 import * as jwt_decode from 'jwt-decode';
+import { AdministratrModel } from 'src/app/models/administratr-model';
+import { ClientModels } from 'src/app/models/client-models';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  client: ClientModels;
+  clientes = [];
+  admin: AdministratrModel;
+  administrators = [];
 
   profile: Profile;
   users: []

@@ -28,4 +28,50 @@ export class ListarSoporteComponent implements OnInit {
     });
   }
 
+  Buscar() {
+    let supportSearch = this.supports.filter(buscar => {
+      return (buscar.name.indexOf(this.search.toUpperCase()) > -1 ||
+      buscar.code.indexOf(this.search.toUpperCase()) > -1);
+    })
+    console.log(supportSearch);
+    if (this.search == "") {
+      this.getSupports()
+    } else {
+      this.supports = supportSearch;
+    }
+  }
+
+  updateSupports(support){
+    this.router.navigateByUrl('updateSoporteDatos/'+support._id);
+  }
+
+  updateSupportsContrasena(support){
+    this.router.navigateByUrl('soporte/'+support._id);
+  }
+
+  deleteSupport(support){
+    if(confirm("¿Deseas eliminar este cliente?")){
+      this.rest.deleteSupport(support._id).subscribe(res =>{
+        if(res.message == 'Error al eliminar'){
+          Swal.fire({
+            type: 'error',
+            title:'Error',
+            text: 'Error al eliminar',
+            timer: 2000
+          });
+        }else{
+          Swal.fire({
+            type: 'info',
+            title:'Eliminado',
+            text: 'Se ha eliminado correctamente de los registros',
+            timer: 2000
+          });
+          this.getSupports();
+        }
+      })
+    }else{
+      console.log('Cancelado')
+    }
+  }
+
 }
