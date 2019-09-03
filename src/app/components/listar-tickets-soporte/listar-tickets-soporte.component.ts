@@ -32,18 +32,7 @@ export class ListarTicketsSoporteComponent implements OnInit {
     })
   }
 
-  Buscar() {
-    let ticketSearch = this.tickets.filter(buscar => {
-      return (buscar.title.indexOf(this.search.toUpperCase()) > -1 ||
-      buscar.description.indexOf(this.search.toUpperCase()) > -1);
-    })
-    console.log(ticketSearch);
-    if (this.search == "") {
-      this.getTicketSopport()
-    } else {
-      this.tickets = ticketSearch;
-    }
-  }
+  
 
   updateConfirm(ticket) {
     this.ticketstatus.status = 'CONFIRMAR'
