@@ -25,7 +25,7 @@ export class ListarTicketsTerminadosComponent implements OnInit {
     })
   }
 
-  Buscar() {
+  Buscar(){
     let ticketSearch = this.tickets.filter(buscar => {
       return (buscar.title.indexOf(this.search.toUpperCase()) > -1 ||
       buscar.description.indexOf(this.search.toUpperCase()) > -1);
