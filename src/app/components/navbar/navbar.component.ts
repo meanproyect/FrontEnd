@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
   onLogout(){
     localStorage.setItem('auth', 'false');
     this.router.navigateByUrl('login');
+    localStorage.setItem('token', 'false');
     this.getAuth();
   }
 

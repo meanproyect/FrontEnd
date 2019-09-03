@@ -11,13 +11,16 @@ export class AdminGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       var token = localStorage.getItem('token');
-      var token1 = jwt_decode(token);
-
-      if(token1.role != 'ADMINISTRATOR'){
-        this.router.navigateByUrl('/home');
+      
+      if(token != 'false'){
+        var token1 = jwt_decode(token);
+        if(token1.role != 'ADMINISTRATOR'){
+          this.router.navigateByUrl('/home');
+        }
       }else{
-        
+        this.router.navigateByUrl('/home');
       }
+      
     return true;
   }
   
