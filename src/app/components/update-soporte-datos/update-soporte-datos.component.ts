@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { SupportModel } from 'src/app/models/support-model';
 import { ClientModels } from 'src/app/models/client-models';
 import { ClientService } from 'src/app/services/client.service';
+import { UpdateSopportDatos } from 'src/app/models/update-sopport-datos';
 
 @Component({
   selector: 'app-update-soporte-datos',
@@ -12,12 +13,12 @@ import { ClientService } from 'src/app/services/client.service';
   styleUrls: ['./update-soporte-datos.component.css']
 })
 export class UpdateSoporteDatosComponent implements OnInit {
-  support: SupportModel;
+  support: UpdateSopportDatos;
   client: ClientModels;
   clients: [];
   constructor(public rest: SupportService, private router: Router, private params: ActivatedRoute, private restClient: ClientService) {
     this.rest.setSupport(this.support);
-    this.support = new SupportModel('', '', '', '', '');
+    this.support = new UpdateSopportDatos('', '', '');
    }
 
    ngOnInit() {
@@ -28,7 +29,7 @@ export class UpdateSoporteDatosComponent implements OnInit {
         this.support.client = res.support.client;
       });
     } else {
-      this.support = new SupportModel('', '', '', '', '');
+      this.support = new UpdateSopportDatos('', '', '');
     }
     this.restClient.getClients().subscribe(res =>{
       this.clients = res.client;
