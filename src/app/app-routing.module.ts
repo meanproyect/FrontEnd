@@ -18,6 +18,7 @@ import { SoporteComponent } from './components/soporte/soporte.component';
 import { ListarSoporteComponent } from './components/listar-soporte/listar-soporte.component';
 import { ListarTicketsClienteComponent } from './components/listar-tickets-cliente/listar-tickets-cliente.component';
 import { ListarTicketsSoporteComponent } from './components/listar-tickets-soporte/listar-tickets-soporte.component';
+import { ListarTicketsTerminadosComponent } from './components/listar-tickets-terminados/listar-tickets-terminados.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path: 'listarSoporte', component: ListarSoporteComponent,canActivate:[AuthGuard]},
   {path: 'listarTicketsCliente', component: ListarTicketsClienteComponent, canActivate:[AuthGuard]},
   {path: 'listarTicketsSoporte', component: ListarTicketsSoporteComponent, canActivate:[AuthGuard]},
+  {path: 'listarTicketsTerminados', component: ListarTicketsTerminadosComponent, canActivate:[AuthGuard]},
   {path: '**', redirectTo:'otro'}
 ];
 

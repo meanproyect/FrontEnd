@@ -3,18 +3,26 @@
     <div id="container">
       <br>
         <h1>&bull; Detalles del Contacto &bull;</h1>
-        <form action="#" method="post" id="contact_form">
-          <div class="Usuario">
-            <label for="usuario"></label>
-            <input type="text" placeholder="Usuario.Logueado" name="usuario" id="usuario_input" disabled>
+        <form  >
+          <div class="Usuario" *ngIf='role == "ADMINISTRATOR" || role == "SUPPORT"'  >
+            <label for="usuario" >Nombre:</label>
+            <input type="text" *ngFor='let user of users'   name="usuario" placeholder="{{user.name + ' '+ user.surname}}" id="usuario_input" disabled>
           </div>
-          <div class="País">
-              <label for="pais"></label>
-              <input type="text" placeholder="pais.logueado" name="pais" id="pais_input" disabled>
+          <div class="Usuario" *ngIf='role == "CLIENT"'>
+            <label for="usuario">Cliente:</label>
+            <input type="text" *ngFor='let user of users' placeholder="{{user.nameClient}}" name="usuario" id="usuario_input" disabled>
+          </div>
+          <div class="País" *ngIf='role == "CLIENT"'>
+              <label for="pais">País:</label>
+              <input type="text" *ngFor='let user of users'  placeholder="{{user.country}}" name="pais" id="pais_input" disabled>
             </div>
             <div class="Codigo de Usuario">
-                <label for="codigo_usuario"></label>
-                <input type="text" placeholder="codigo_usuario.logueado" name="codigo_usuario" id="codigo_input" disabled>
+                <label for="codigo_usuario">Código:</label>
+                <input type="text" *ngFor='let user of users' placeholder="{{user.code}}" name="codigo_usuario" id="codigo_input" disabled>
+              </div>
+              <div class="Codigo de Usuario">
+                <label for="codigo_usuario">Rol:</label>
+                <input type="text" *ngFor='let user of users' placeholder="{{user.role}}" name="role_usuario" id="role_input" disabled>
               </div>
         </form>
       </div>
