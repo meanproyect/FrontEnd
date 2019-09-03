@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ListarTicketsClienteComponent implements OnInit {
   ticket: TicketModel;
-  tickets: [];
+  tickets: TicketModel[];
   search: string;
 
   constructor(private rest: TicketService, private router: Router) {
@@ -32,7 +32,7 @@ export class ListarTicketsClienteComponent implements OnInit {
     })
   }
 
-  /*Buscar() {
+  Buscar() {
     let TicketsClientSearch = this.tickets.filter(buscar => {
       return (buscar.title.indexOf(this.search.toUpperCase()) > -1 ||
       buscar.description.indexOf(this.search.toUpperCase()) > -1);
@@ -43,7 +43,7 @@ export class ListarTicketsClienteComponent implements OnInit {
     } else {
       this.tickets = TicketsClientSearch;
     }
-  }*/
+  }
 
 
   updateTicketClient(ticket){

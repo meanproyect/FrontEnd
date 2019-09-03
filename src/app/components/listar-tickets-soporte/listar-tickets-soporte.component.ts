@@ -10,7 +10,8 @@ import Swal from 'sweetalert2';
 })
 export class ListarTicketsSoporteComponent implements OnInit {
   ticket: TicketModel;
-  tickets: []
+  tickets: TicketModel[]
+  search: string;
   constructor(private rest: TicketService) {
     this.ticket = new TicketModel('', '', '', '');
   }
@@ -27,6 +28,19 @@ export class ListarTicketsSoporteComponent implements OnInit {
       console.log(res);
       this.tickets = res.ticket;
     })
+  }
+
+  Buscar() {
+    let ticketSearch = this.tickets.filter(buscar => {
+      return (buscar.title.indexOf(this.search.toUpperCase()) > -1 ||
+      buscar.description.indexOf(this.search.toUpperCase()) > -1);
+    })
+    console.log(ticketSearch);
+    if (this.search == "") {
+      this.getTicketSopport()
+    } else {
+      this.tickets = ticketSearch;
+    }
   }
 
   updateConfirm(ticket) {

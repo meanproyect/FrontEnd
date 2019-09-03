@@ -49,7 +49,7 @@ import { UpdateSoporteDatosComponent } from './components/update-soporte-datos/u
     ListarSoporteComponent,
     ListarTicketsSoporteComponent,
     ListarTicketsClienteComponent,
-    UpdateSoporteDatosComponent
+    UpdateSoporteDatosComponent,
   ],
   imports: [
     BrowserModule,

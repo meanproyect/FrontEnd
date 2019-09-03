@@ -84,3 +84,6 @@ transform: scale(1.05);
 transition: transform .7s;
 }
 
+.form-control{
+  text-transform: uppercase;
+}
