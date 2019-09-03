@@ -20,29 +20,37 @@ import { ListarTicketsClienteComponent } from './components/listar-tickets-clien
 import { ListarTicketsSoporteComponent } from './components/listar-tickets-soporte/listar-tickets-soporte.component';
 import { ListarTicketsTerminadosComponent } from './components/listar-tickets-terminados/listar-tickets-terminados.component';
 import { UpdateSoporteDatosComponent } from './components/update-soporte-datos/update-soporte-datos.component';
+import { ClientGuard } from './guards/client.guard';
+import { AdminGuard } from './guards/admin.guard';
+import { SupportGuard } from './guards/support.guard';
 
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent, canActivate:[AuthGuard]},
-  {path: 'register/:id', component: RegisterComponent,canActivate:[AuthGuard]},
-  {path: 'registerAdmin/:id', component: RegisterAdminComponent ,canActivate:[AuthGuard]},
-  {path: 'usuarios', component: UsuariosComponent,canActivate:[AuthGuard]},
-  {path: 'tickets/:id', component: TicketsComponent,canActivate:[AuthGuard]},
+  {path: 'register/:id', component: RegisterComponent,canActivate:[AdminGuard]},
+  {path: 'registerAdmin/:id', component: RegisterAdminComponent ,canActivate:[AdminGuard]},
+
+  {path: 'usuarios', component: UsuariosComponent,canActivate:[AdminGuard]},
+
+  {path: 'tickets/:id', component: TicketsComponent,canActivate:[ClientGuard]},
+
   {path: 'profile', component: ProfileComponent,canActivate:[AuthGuard]},
-  {path: 'usuariosNoFake', component: UsuariosNoFakeComponent,canActivate:[AuthGuard]},
-  {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent,canActivate:[AuthGuard]},
-  {path: 'updateusercontrasena/:id', component: UpdateUserContrasenaComponent,canActivate:[AuthGuard]},
-  {path: 'updateSoporteDatos/:id', component: UpdateSoporteDatosComponent,canActivate:[AuthGuard]},
-  {path: 'listarTickets', component: ListarTicketsComponent,canActivate:[AuthGuard]},
+
+  {path: 'usuariosNoFake', component: UsuariosNoFakeComponent,canActivate:[AdminGuard]},
+
+  {path: 'updateclientecontrasena/:id', component: UpdateClienteContrasenaComponent,canActivate:[AdminGuard]},
+  {path: 'updateusercontrasena/:id', component: UpdateUserContrasenaComponent,canActivate:[AdminGuard]},
+  {path: 'updateSoporteDatos/:id', component: UpdateSoporteDatosComponent,canActivate:[AdminGuard]},
+  {path: 'listarTickets', component: ListarTicketsComponent,canActivate:[AdminGuard]},
   {path: 'otro', component: OtroComponent},
   {path: 'navbar', component: NavbarComponent},
-  {path: 'soporte/:id', component: SoporteComponent,canActivate:[AuthGuard]},
-  {path: 'listarSoporte', component: ListarSoporteComponent,canActivate:[AuthGuard]},
-  {path: 'listarTicketsCliente', component: ListarTicketsClienteComponent, canActivate:[AuthGuard]},
-  {path: 'listarTicketsSoporte', component: ListarTicketsSoporteComponent, canActivate:[AuthGuard]},
-  {path: 'listarTicketsTerminados', component: ListarTicketsTerminadosComponent, canActivate:[AuthGuard]},
+  {path: 'soporte/:id', component: SoporteComponent,canActivate:[AdminGuard]},
+  {path: 'listarSoporte', component: ListarSoporteComponent,canActivate:[AdminGuard]},
+  {path: 'listarTicketsCliente', component: ListarTicketsClienteComponent, canActivate:[ClientGuard]},
+  {path: 'listarTicketsSoporte', component: ListarTicketsSoporteComponent, canActivate:[SupportGuard]},
+  {path: 'listarTicketsTerminados', component: ListarTicketsTerminadosComponent, canActivate:[AdminGuard]},
   {path: '**', redirectTo:'otro'}
 ];
 
