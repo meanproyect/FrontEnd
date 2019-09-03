@@ -30,7 +30,7 @@ export class ListarSoporteComponent implements OnInit {
 
   Buscar() {
     let supportSearch = this.supports.filter(buscar => {
-      return (buscar.nameClient.indexOf(this.search.toUpperCase()) > -1 ||
+      return (buscar.name.indexOf(this.search.toUpperCase()) > -1 ||
       buscar.code.indexOf(this.search.toUpperCase()) > -1);
     })
     console.log(supportSearch);

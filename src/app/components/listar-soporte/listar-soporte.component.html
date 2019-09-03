@@ -9,7 +9,7 @@
     <form>
       <div class="cajita form-row">
         <div class="input-group mb-3 backdiv">
-          <input class="form-control" style="z-index: 0;" 
+          <input class="form-control" style="z-index: 0;" #myInput [(ngModel)]="search" (input)="Buscar()"
           name="search" type="text" placeholder="Ingresa el nombre del Cliente que deseas buscar">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
