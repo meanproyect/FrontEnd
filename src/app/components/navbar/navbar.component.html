@@ -4,7 +4,7 @@
     <div class="sidebar">
       <ul class="list-group flex-column d-inline-block first-menu" >
         <!-- ============== GRUPO 1 ============== -->
-        <li class="list-group-item py-2" >
+        <li routerLink="/home" style="cursor: pointer;" class="list-group-item py-2" >
           <a routerLink="/home">
             <img src="http://img.icons8.com/cotton/2x/home--v1.png" height="40"
               class="mr-4">
@@ -18,11 +18,11 @@
 
         <!-- ============== GRUPO 2 ============== -->
 
-        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRATOR"'>
-          <a >
+        <li style="cursor: pointer;" class="list-group-item py-2" *ngIf='rol == "ADMINISTRATOR"'>
+          <a class="cursor">
             <img src="https://cdn.pixabay.com/photo/2016/03/31/20/37/client-1295901_960_720.png" height="40"
               class="mr-4">
-            <a style="white-space: nowrap;
+            <a class="cursor" style="white-space: nowrap;
               color: #8e8e8e;
               font-weight: 400;
               font-size: 0.875em;
@@ -52,11 +52,11 @@
 
         <!-- ============== GRUPO 3 ============== -->
 
-        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRATOR"'>
-          <a>
+        <li style="cursor: pointer;" class="list-group-item py-2" *ngIf='rol == "ADMINISTRATOR"'>
+          <a class="cursor">
             <img src="https://image.flaticon.com/icons/png/512/149/149071.png" height="40"
               class="mr-4">
-            <a style="white-space: nowrap;
+            <a class="cursor" style="white-space: nowrap;
                 color: #8e8e8e;
                 font-weight: 400;
                 font-size: 0.875em;
@@ -86,11 +86,11 @@
 
         <!-- ============== GRUPO 4 ============== -->
 
-        <li class="list-group-item py-2">
-            <a>
+        <li style="cursor: pointer;" class="list-group-item py-2">
+            <a class="cursor">
               <img src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg" height="40"
                 class="mr-4">
-              <a style="white-space: nowrap;
+              <a class="cursor" style="white-space: nowrap;
                     color: #8e8e8e;
                     font-weight: 400;
                     font-size: 0.875em;
@@ -148,11 +148,11 @@
 
         <!-- ============== GRUPO 5 ============== -->
 
-        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRATOR"'>
-          <a>
+        <li class="list-group-item py-2" style="cursor: pointer" *ngIf='rol == "ADMINISTRATOR"'>
+          <a class="cursor">
             <img src="https://images.vexels.com/media/users/3/131312/isolated/preview/fdc5ab4d9908148b66be99ec3d5d119a-icono-de-agente-de-soporte-masculino-gris-by-vexels.png" height="40"
               class="mr-4">
-            <a style="white-space: nowrap;
+            <a class="cursor" style="white-space: nowrap;
                   color: #8e8e8e;
                   font-weight: 400;
                   font-size: 0.875em;
@@ -181,7 +181,7 @@
         </li>
 
         <!-- ============== GRUPO 6 ============== -->
-        <li class="list-group-item py-2">
+        <li routerLink="/profile" style="cursor: pointer;" class="list-group-item py-2">
           <a routerLink="/profile">
             <img src="https://images.vexels.com/media/users/3/147101/isolated/preview/b4a49d4b864c74bb73de63f080ad7930-bot--n-de-perfil-de-instagram-by-vexels.png" height="40"
               class="mr-4">
@@ -192,11 +192,11 @@
                     font-weight: bold;">Perfil</a>
           </a>
         </li>
-        <li *ngIf = "islogged" class="list-group-item py-2">
-          <a (click)=" onLogout()">
-            <img src="https://images.vexels.com/media/users/3/147101/isolated/preview/b4a49d4b864c74bb73de63f080ad7930-bot--n-de-perfil-de-instagram-by-vexels.png" height="40"
+        <li class="cursor" style="cursor: pointer;" (click)=" onLogout()" *ngIf = "islogged" class="list-group-item py-2">
+          <a class="cursor" (click)=" onLogout()">
+            <img src="https://cdn1.iconfinder.com/data/icons/door-3/200/1333_door-512.png" height="40"
               class="mr-4">
-            <a style="white-space: nowrap;
+            <a class="cursor" style="white-space: nowrap;
                     color: #8e8e8e;
                     font-weight: 400;
                     font-size: 0.875em;

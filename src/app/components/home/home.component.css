@@ -310,7 +310,7 @@ button::before {
 }
 
 .box-5 button div::before {
-    content: 'Tickets Finalizados';
+    content: 'Finalizados';
     position: relative;
     top: -44px;
     left: -9px;
