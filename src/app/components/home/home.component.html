@@ -7,10 +7,19 @@
         <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-964edcf0f07211b0.png" alt=""></div>
         <button><div></div></button>
     </div>
-    <div class="box box-3">
+    <!--LISTAR TICKETS-->
+    <div class="box box-3" *ngIf='rol == "ADMINISTRADOR"'>
         <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
-        <button><div></div></button>
+        <button  routerLink="/listarTickets"><div></div></button>
     </div>
+    <div class="box box-3" *ngIf='rol == "CLIENT"'>
+            <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
+            <button routerLink="/listarTicketsCliente"><div></div></button>
+        </div>
+        <div class="box box-3" *ngIf='rol == "SUPPORT"'>
+                <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
+                <button  routerLink="/listarTicketsSoporte"><div></div></button>
+            </div>
     <!--LOGOUT-->
     <div class="box box-4" *ngIf = "islogged"> 
         <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-f79c4cc8de2f84ae.png" alt=""></div>
