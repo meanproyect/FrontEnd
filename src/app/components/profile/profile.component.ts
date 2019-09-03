@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ClientModels } from 'src/app/models/client-models'
+import { Profile } from 'src/app/models/profile';
+import { LoginService } from 'src/app/services/login.service';
+import * as jwt_decode from 'jwt-decode';
 import { AdministratrModel } from 'src/app/models/administratr-model';
-import { ClientService } from 'src/app/services/client.service';
-import { AdministratorService  } from 'src/app/services/administrator.service';
-import { Router } from '@angular/router';
-
+import { ClientModels } from 'src/app/models/client-models';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -16,24 +15,28 @@ export class ProfileComponent implements OnInit {
   admin: AdministratrModel;
   administrators = [];
 
-  constructor(public rest: ClientService, public rest2: AdministratorService) { }
+  profile: Profile;
+  users: []
+  public token = localStorage.getItem('token');
+  public token1 = jwt_decode(this.token);
+  public role = this.token1.role;
+  
+  constructor(private rest: LoginService) { 
+    this.profile = new Profile('','');
+  }
 
   ngOnInit() {
-    this.getAdministrators();
-    this.getClients();
+   this.getProfile();
   }
 
-  getClients() {
-    this.rest.getClients().subscribe(res => {
-      this.clientes = res.client;
-    });
-  }
-
-  getAdministrators() {
-    this.rest2.getAdministrator().subscribe(res => {
+  getProfile(){
+    var token = localStorage.getItem('token');
+    var token1 = jwt_decode(token);
+    this.profile.code = token1.code;
+    this.profile.role = token1.role;
+    this.rest.getUser(this.profile).subscribe(res =>{
       console.log(res);
-      this.administrators = res.users;
-    });
+      this.users = res.user;
+    })
   }
-
 }

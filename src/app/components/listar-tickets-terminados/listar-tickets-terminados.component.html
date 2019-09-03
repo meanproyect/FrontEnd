@@ -4,14 +4,14 @@
 <div class="Fondo">
 <div class='login'>
   <br>
-  <h2 class="h3 mb-3 font-weight-normal">Tickets Administrador</h2>
+  <h2 class="h3 mb-3 font-weight-normal">Tickets Finalizados</h2>
 
   <div class="container">
     <form>
       <div class="cajita form-row">
         <div class="input-group mb-3 backdiv">
           <input class="form-control" style="z-index: 0;" name="search" type="text"
-            placeholder="Ingresa el Ticket que desea buscar" #myInput [(ngModel)]="search" (input)="Buscar2()">
+            placeholder="Ingresa el Ticket que desea buscar">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
                 style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
@@ -24,7 +24,7 @@
         <hr style="background-color: ivory;"><br>
         <div class="row"><br>
           <!--AQUI EMPIEZA EL DIV-->
-          <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;" *ngFor='let ticket of tickes'>
+          <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;" *ngFor='let ticket of tickets'>
             <div class="row">
               <div class="col-md-4">
                 <img style="padding: 25px"
@@ -44,6 +44,9 @@
                 </p>
                 <p class="card-text text-gray"><i class="fa fa-calendar-alt"
                   style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Fecha de inicio: {{ticket.startDate}}
+                </p>
+                <p class="card-text text-gray"><i class="fa fa-calendar-alt"
+                  style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Fecha de finalizado: {{ticket.finalDate}}
                 </p>
                   <br><br><br>
                  

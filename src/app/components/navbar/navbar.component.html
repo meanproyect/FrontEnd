@@ -18,7 +18,7 @@
 
         <!-- ============== GRUPO 2 ============== -->
 
-        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRADOR"'>
+        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRATOR"'>
           <a >
             <img src="https://cdn.pixabay.com/photo/2016/03/31/20/37/client-1295901_960_720.png" height="40"
               class="mr-4">
@@ -52,7 +52,7 @@
 
         <!-- ============== GRUPO 3 ============== -->
 
-        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRADOR"'>
+        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRATOR"'>
           <a>
             <img src="https://image.flaticon.com/icons/png/512/149/149071.png" height="40"
               class="mr-4">
@@ -106,12 +106,21 @@
                   </div>
                 </a>
               </li>
-              <li class="list-group-item" *ngIf='rol == "ADMINISTRADOR"'>
+              <li class="list-group-item" *ngIf='rol == "ADMINISTRATOR"'>
                 <a href="#" routerLink="/listarTickets">
                   <img src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
                     height="40" width="40" class="ml-2 mr-4 d-inline-block">
                   <div class="text d-inline-block align-middle">
                     Listar Tickets Administrador
+                  </div>
+                </a>
+              </li>
+              <li class="list-group-item" *ngIf='rol == "ADMINISTRATOR"'>
+                <a href="#" routerLink="/listarTicketsTerminados">
+                  <img src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
+                    height="40" width="40" class="ml-2 mr-4 d-inline-block">
+                  <div class="text d-inline-block align-middle">
+                    Listar Tickets Terminados
                   </div>
                 </a>
               </li>
@@ -139,7 +148,7 @@
 
         <!-- ============== GRUPO 5 ============== -->
 
-        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRADOR"'>
+        <li class="list-group-item py-2" *ngIf='rol == "ADMINISTRATOR"'>
           <a>
             <img src="https://images.vexels.com/media/users/3/131312/isolated/preview/fdc5ab4d9908148b66be99ec3d5d119a-icono-de-agente-de-soporte-masculino-gris-by-vexels.png" height="40"
               class="mr-4">

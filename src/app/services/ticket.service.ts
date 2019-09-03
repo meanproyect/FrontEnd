@@ -27,6 +27,12 @@ export class TicketService {
       map(this.extracData)
     )
   }
+  getTicketsFinished():Observable<any>{
+    return this.http.get(this.endpoint + '/Listar-Tickets-Terminados', this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
+  
   setTicket(save_ticket):Observable<any>{
     let params = JSON.stringify(save_ticket);
     console.log(params);
@@ -60,18 +66,21 @@ export class TicketService {
 
   //Actualizaciones de soporte
 
-  TicketUpdateConform(id):Observable<any>{
-    return this.http.put(this.endpoint + '/Update-Confim/' + id, this.httpOptions).pipe(
+  TicketUpdateConform(id,Update):Observable<any>{
+    let params = JSON.stringify(Update)
+    return this.http.put(this.endpoint + '/Update-Confim/' + id, params,this.httpOptions).pipe(
       map(this.extracData)
     )
   }
-  TicketUpdateProcess(id):Observable<any>{
-    return this.http.put(this.endpoint + '/Update-Process/' + id, this.httpOptions).pipe(
+  TicketUpdateProcess(id,Update):Observable<any>{
+    let params = JSON.stringify(Update)
+    return this.http.put(this.endpoint + '/Update-Process/' +   id, params,this.httpOptions).pipe(
       map(this.extracData)
     )
   }
-  TicketUpdateEnd(id): Observable<any>{
-    return this.http.put(this.endpoint + '/Update-finish/'+id , this.httpOptions).pipe(
+  TicketUpdateEnd(id,Update): Observable<any>{
+    let params = JSON.stringify(Update)
+    return this.http.put(this.endpoint + '/Update-finish/'+id, params , this.httpOptions).pipe(
       map(this.extracData)
     )
   }

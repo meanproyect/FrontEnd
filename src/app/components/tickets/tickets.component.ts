@@ -73,6 +73,7 @@ export class TicketsComponent implements OnInit {
               text: 'Se ha guardado corrrectamente',
               timer: 2000
             });
+            this.router.navigateByUrl('listarTicketsCliente');
           }
         }
       });

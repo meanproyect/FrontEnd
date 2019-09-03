@@ -25,4 +25,10 @@ export class LoginService {
       map(this.extractData)
     )
   }
+  getUser(user):Observable<any>{
+    let params = JSON.stringify(user);
+    return this.http.post(this.endpoint + '/profile', params,this.httOptions).pipe(
+      map(this.extractData)
+    )
+  }
 }
