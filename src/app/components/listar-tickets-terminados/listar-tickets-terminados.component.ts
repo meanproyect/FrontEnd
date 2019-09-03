@@ -9,7 +9,8 @@ import { TicketService } from 'src/app/services/ticket.service';
 })
 export class ListarTicketsTerminadosComponent implements OnInit {
   ticket: TicketModel
-  tickets: [];
+  tickets: TicketModel[];
+  search: string;
 
   constructor(private rest: TicketService) { }
 
@@ -22,6 +23,19 @@ export class ListarTicketsTerminadosComponent implements OnInit {
       console.log(res);
       this.tickets = res.ticket;
     })
+  }
+
+  Buscar() {
+    let ticketSearch = this.tickets.filter(buscar => {
+      return (buscar.title.indexOf(this.search.toUpperCase()) > -1 ||
+      buscar.description.indexOf(this.search.toUpperCase()) > -1);
+    })
+    console.log(ticketSearch);
+    if (this.search == "") {
+      this.getTicket();
+    } else {
+      this.tickets = ticketSearch;
+    }
   }
 
 }

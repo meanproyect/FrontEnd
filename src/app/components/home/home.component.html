@@ -8,10 +8,14 @@
         <button><div></div></button>
     </div>
     <!--LISTAR TICKETS-->
-    <div class="box box-3" *ngIf='rol == "ADMINISTRADOR"'>
+    <div class="box box-3" *ngIf='rol == "ADMINISTRATOR"'>
         <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
         <button  routerLink="/listarTickets"><div></div></button>
     </div>
+    <div class="box box-5" *ngIf='rol == "ADMINISTRATOR"'>
+            <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
+            <button routerLink="/listarTicketsTerminados"><div></div></button>
+        </div>
     <div class="box box-3" *ngIf='rol == "CLIENT"'>
             <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
             <button routerLink="/listarTicketsCliente"><div></div></button>

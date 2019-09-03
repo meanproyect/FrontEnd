@@ -84,4 +84,6 @@ h2 {
   transition: transform .7s;
   }
   
-  
+  .form-control{
+    text-transform: uppercase;
+  }

@@ -90,6 +90,12 @@ button::before {
     background-color: #FF6500;
 }
 
+.box-5:hover button::before {
+    width: 120%;
+    opacity: .8;
+    background-color: #008BFF;
+}
+
 .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -183,6 +189,21 @@ button::before {
     line-height: 40px;
 }
 
+.box-5 button {
+    border: 1px solid #008BFF;
+    color: #fff;
+    font-size: 22px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+}
+
+.box-5 button::after {
+    content: "";
+    background-color: #008BFF;
+    top: -85px
+}
+
 .box-4 button::after {
     content: "";
     background-color: #FF6500;
@@ -244,6 +265,11 @@ button::before {
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-f79c4cc8de2f84ae.png');
 }
 
+.box-5 .cover::after {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-f79c4cc8de2f84ae.png');
+}
+
+
 .box-1 button div::before {
     content: 'Sensebot';
     position: relative;
@@ -283,7 +309,21 @@ button::before {
     font-weight: 300;
 }
 
+.box-5 button div::before {
+    content: 'Tickets';
+    position: relative;
+    top: -44px;
+    left: -9px;
+    color: #008BFF;
+    font-size: 21px;
+    font-weight: 300;
+}
+
 .box-3:hover button div::before {
+    color: #fff;
+}
+
+.box-5:hover button div::before {
     color: #fff;
 }
 

@@ -12,7 +12,8 @@ import { UpdateConfimTicket } from 'src/app/models/update-confim-ticket';
 })
 export class ListarTicketsClienteComponent implements OnInit {
   ticket: TicketModel;
-  tickets: [];
+  tickets: TicketModel[];
+  search: string;
   ticketstatus: UpdateConfimTicket
   constructor(private rest: TicketService, private router: Router) {
     this.rest.setTicket(this.ticket);
@@ -32,6 +33,20 @@ export class ListarTicketsClienteComponent implements OnInit {
       this.tickets = res.ticket;
     })
   }
+
+  Buscar() {
+    let ticketSearch = this.tickets.filter(buscar => {
+      return (buscar.title.indexOf(this.search.toUpperCase()) > -1 ||
+      buscar.description.indexOf(this.search.toUpperCase()) > -1);
+    })
+    console.log(ticketSearch);
+    if (this.search == "") {
+      this.getTicketsClient()
+    } else {
+      this.tickets = ticketSearch;
+    }
+  }
+
   updateTicketClient(ticket) {
     this.router.navigateByUrl('tickets/' + ticket._id);
   }
