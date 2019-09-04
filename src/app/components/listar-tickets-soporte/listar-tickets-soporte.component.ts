@@ -118,5 +118,56 @@ export class ListarTicketsSoporteComponent implements OnInit {
       })
     }
   }
+  updateTicketWait(ticket) {
+    if (confirm("¿Deseas ponerlo en Espera?")) {
+      this.ticketstatus.status = 'ESPERA'
+      this.rest.TicketUpdateWait(ticket._id, this.ticketstatus).subscribe(res => {
+        if (res.message == 'Error al actualizar') {
+          Swal.fire({
+            type: 'error',
+            title: 'Error',
+            text: 'Error al confimar',
+            timer: 2000
+          });
+        } else {
+          if (res.update && res.update._id) {
 
+            Swal.fire({
+              type: 'info',
+              title: 'ESPERA',
+              text: 'Se ha procesado correctamente el ticket',
+              timer: 2000
+            });
+            this.getTicketSopport();
+          }
+        }
+      })
+    }
+  }
+  updateTicketConfirmOfClient(ticket) {
+    if (confirm("¿Deseas ponerlo en CONFIRMAR POR CLIENTE?")) {
+      this.ticketstatus.status = 'CONFIRMAR POR CLIENTE'
+      this.rest.TicketUpdateConfirmofClient(ticket._id, this.ticketstatus).subscribe(res => {
+        if (res.message == 'Error al actualizar') {
+          Swal.fire({
+            type: 'error',
+            title: 'Error',
+            text: 'Error al confimar',
+            timer: 2000
+          });
+        } else {
+          if (res.update && res.update._id) {
+
+            Swal.fire({
+              type: 'info',
+              title: 'CONFIRMAR POR CLIENTE',
+              text: 'Se ha procesado correctamente el ticket',
+              timer: 2000
+            });
+            this.getTicketSopport();
+          }
+        }
+      })
+    }
+  }
 }

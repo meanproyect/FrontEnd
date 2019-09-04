@@ -43,9 +43,11 @@
                     style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Fecha de inicio: {{ticket.startDate}}
                   </p>
                   <br><br><br>
-                  <button type="button" class="btn btn-outline-primary btn-block" *ngIf="ticket.status != 'PROCESO' && ticket.status != 'CONFIRMADO' "  (click)=" updateTicketClient(ticket)">Actualizar </button>
-                  <button type="button" class="btn btn-outline-danger btn-block" *ngIf="ticket.status != 'PROCESO' && ticket.status != 'CONFIRMADO' "  (click)="deleteTicketClient(ticket)">Eliminar</button>
-                  <button type="button" class="btn btn-outline-success btn-block" *ngIf="ticket.status != 'PROCESO' && ticket.status != 'CONFIRMADO' " (click)="updateConfirm(ticket)" >Confirmado</button>                </div>
+                  <button type="button" class="btn btn-outline-primary btn-block" *ngIf="ticket.status != 'PROCESO' && ticket.status != 'CONFIRMADO' && ticket.status != 'CONFIRMAR POR CLIENTE' "  (click)=" updateTicketClient(ticket)">Actualizar </button>
+                  <button type="button" class="btn btn-outline-danger btn-block" *ngIf="ticket.status != 'PROCESO' && ticket.status != 'CONFIRMADO' && ticket.status != 'CONFIRMAR POR CLIENTE' "  (click)="deleteTicketClient(ticket)">Eliminar</button>
+                  <button type="button" class="btn btn-outline-success btn-block" *ngIf="ticket.status == 'CONFIRMAR POR CLIENTE' " (click)="updateConfirm(ticket)" >Confirmado</button> 
+                  <button type="button" class="btn btn-outline-danger btn-block" *ngIf="ticket.status == 'CONFIRMADO' " (click)="updateTicketEnd(ticket)" >Terminar Ticket</button> 
+                </div>
               </div>
             </div>
           </div>

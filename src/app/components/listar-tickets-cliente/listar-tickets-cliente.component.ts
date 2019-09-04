@@ -93,4 +93,20 @@ export class ListarTicketsClienteComponent implements OnInit {
       })
     }
   }
+  updateTicketEnd(ticket) {
+    if (confirm("¿Deseas Terminar el Ticket?")) {
+      this.ticketstatus.status = 'TERMINADO'
+      this.rest.TicketUpdateEnd(ticket._id, this.ticketstatus).subscribe(res => {
+        if (res.message == 'Se ha terminado el ticket') {
+          Swal.fire({
+            type: 'info',
+            title: 'Terminado',
+            text: 'Se ha terminado el ticket',
+            timer: 2000
+          });
+          this.getTicketsClient();
+        }
+      })
+    }
+  }
 }

@@ -64,7 +64,7 @@ export class TicketService {
     )
   }
 
-  //Actualizaciones de soporte
+  //Actualizaciones de estado de ticket
 
   TicketUpdateConform(id,Update):Observable<any>{
     let params = JSON.stringify(Update)
@@ -84,4 +84,17 @@ export class TicketService {
       map(this.extracData)
     )
   }
+  TicketUpdateWait(id,Update): Observable<any>{
+    let params = JSON.stringify(Update)
+    return this.http.put(this.endpoint + '/Update-Wait/'+id, params , this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
+  TicketUpdateConfirmofClient(id,Update): Observable<any>{
+    let params = JSON.stringify(Update)
+    return this.http.put(this.endpoint + '/Update-ConfirmClient/'+id, params , this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
+   
 }
