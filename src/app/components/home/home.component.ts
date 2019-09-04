@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   onLogout(){
-    localStorage.setItem('auth', 'false');
+    localStorage.setItem('token', 'false');
     this.router.navigateByUrl('login');
     this.getAuth();
   }

@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   client: ClientModels
   constructor(public rest: ClientService, private router: Router, private params: ActivatedRoute) {
     this.rest.setClient(this.client);
-    this.client = new ClientModels('', '', '');
+    this.client = new ClientModels('', '', '','');
   }
 
   ngOnInit() {
@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
         this.client.country = res.client.country;
       })
     } else {
-      this.client = new ClientModels('', '', '');
+      this.client = new ClientModels('', '', '','');
     }
   }
 
