@@ -85,14 +85,14 @@ export class SoporteComponent implements OnInit {
               timer: 2000
             });
             this.router.navigateByUrl('listarSoporte');
-          } else if (res.message == 'Este Tecnico ya se ha registrado') {
+          } else if (res.message == 'Ya esta registrado el usuario') {
             Swal.fire({
               type: 'error',
               title: 'Error',
-              text: 'El usuario ya esta registrado',
+              text: 'El tecnico ya esta registrado',
               timer: 2000
             });
-          } else if (res.message == 'Error al guardar al Tecnico de soporte') {
+          } else if (res.message == 'Ya esta registrado el usuario') {
             Swal.fire({
               type: 'error',
               title: 'Error',

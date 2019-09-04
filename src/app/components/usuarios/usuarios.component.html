@@ -42,9 +42,9 @@
                       style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i>Codigo de usuario:
                     {{client.code}}</p>
                   <br><br><br>
-                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" (click)="updateClientsDatos(client)">Actualizar Datos Personales</button>
-                  <button type="button" class="btn btn-outline-success" style="margin: 10px" (click)="updateClients(client)" >Actualizar Contraseña</button>
-                  <button type="button" class="btn btn-outline-danger"  style="width: auto;" (click)="deleteClient(client)">Eliminar</button>
+                  <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" *ngIf="client.nameClient != 'DEFAULT'" (click)="updateClientsDatos(client)">Actualizar Datos Personales</button>
+                  <button type="button" class="btn btn-outline-success" style="margin: 10px" *ngIf="client.nameClient != 'DEFAULT'" (click)="updateClients(client)" >Actualizar Contraseña</button>
+                  <button type="button" class="btn btn-outline-danger"  style="width: auto;" *ngIf="client.nameClient != 'DEFAULT'" (click)="deleteClient(client)">Eliminar</button>
                 </div>
                 </div>
               </div>

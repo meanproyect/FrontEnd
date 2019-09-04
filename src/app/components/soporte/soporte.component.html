@@ -23,7 +23,7 @@
             <label style="color: black">Cliente a asignar</label>
             <select class="form-control custom-select" id="cliente" name="cliente" [(ngModel)]="support.client">
               <option value="">Seleccionar el cliente que le asignaras a esta persona</option>
-              <option *ngFor='let client of clients' value="{{client._id}}">{{client.nameClient}}</option>
+              <option *ngFor='let client of clients'  value="{{client._id}}">{{client.nameClient}}</option>
             </select>
           </div>
           <div class="form-group">
