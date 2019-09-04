@@ -3,30 +3,30 @@
     <small>Esperemos y disfrutes de esta aplicacion la cual esta dirigida a empresas que desean tener un mejor control con sus clientes.</small>
   </h1>
 <div class="container">
-    <div class="box box-2">
-        <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-964edcf0f07211b0.png" alt=""></div>
+    <div class="box box-2" style="cursor: pointer">
+        <div class="cover"><img routerLink="/profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-964edcf0f07211b0.png" alt=""></div>
         <button routerLink="/profile"><div></div></button>
     </div>
     <!--LISTAR TICKETS-->
-    <div class="box box-3" *ngIf='rol == "ADMINISTRATOR"'>
-        <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
+    <div class="box box-3" style="cursor: pointer" *ngIf='rol == "ADMINISTRATOR"'>
+        <div class="cover"><img routerLink="/listarTickets" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
         <button  routerLink="/listarTickets"><div></div></button>
     </div>
-    <div class="box box-5" *ngIf='rol == "ADMINISTRATOR"'>
-            <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
+    <div class="box box-5" style="cursor: pointer" *ngIf='rol == "ADMINISTRATOR"'>
+            <div class="cover"><img routerLink="/listarTicketsTerminados" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
             <button routerLink="/listarTicketsTerminados"><div></div></button>
         </div>
-    <div class="box box-3" *ngIf='rol == "CLIENT"'>
-            <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
+    <div class="box box-3" style="cursor: pointer" *ngIf='rol == "CLIENT"'>
+            <div class="cover"><img routerLink="/listarTicketsCliente" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
             <button routerLink="/listarTicketsCliente"><div></div></button>
         </div>
-        <div class="box box-3" *ngIf='rol == "SUPPORT"'>
-                <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
+        <div class="box box-3" style="cursor: pointer" *ngIf='rol == "SUPPORT"'>
+                <div class="cover"><img routerLink="/listarTicketsSoporte" vsrc="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-2ebb2b6f93add843.png" alt=""></div>
                 <button  routerLink="/listarTicketsSoporte"><div></div></button>
             </div>
     <!--LOGOUT-->
-    <div class="box box-4" *ngIf = "islogged"> 
-        <div class="cover"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-f79c4cc8de2f84ae.png" alt=""></div>
+    <div class="box box-4" style="cursor: pointer" *ngIf = "islogged"> 
+        <div class="cover"><img (click)="onLogout()" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/945546/3433202-f79c4cc8de2f84ae.png" alt=""></div>
         <button (click)=" onLogout()"><div></div></button>
     </div>
 </div>

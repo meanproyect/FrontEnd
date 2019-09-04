@@ -16,6 +16,7 @@ export class ListarTicketsTerminadosComponent implements OnInit {
 
   ngOnInit() {
     this.getTicket();
+    console.log(this.tickets);
   }
 
   getTicket(){
