@@ -11,7 +11,7 @@ import * as jwt_decode from 'jwt-decode';
 })
 export class TicketsComponent implements OnInit {
   ticket: TicketModel;
-
+  fileToUpload: Array<File>;
   constructor(public rest: TicketService, private router: Router, private params: ActivatedRoute) {
     this.rest.setTicket(this.ticket);
     this.ticket = new TicketModel('','','','');
@@ -80,7 +80,9 @@ export class TicketsComponent implements OnInit {
     }
   }
 
-
+fileChangeEvent(event: any){
+  this.fileToUpload = <Array<File>>event.target.files;
+}
 
 
 }
