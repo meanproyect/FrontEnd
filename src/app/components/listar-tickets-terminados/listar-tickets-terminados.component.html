@@ -2,63 +2,72 @@
 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
 <app-navbar></app-navbar>
 <div class="Fondo">
-<div class='login'>
-  <br>
-  <h2 class="h3 mb-3 font-weight-normal">Tickets Finalizados</h2>
+  <div class='login'>
+    <br>
+    <h2 class="h3 mb-3 font-weight-normal">Tickets Finalizados</h2>
 
-  <div class="container">
-    <form>
-      <div class="cajita form-row">
-        <div class="input-group mb-3 backdiv">
-          <input class="form-control" style="z-index: 0;" name="search" type="text"
-            placeholder="Ingresa el Ticket que desea buscar" #myInput [(ngModel)]="search" (input)="Buscar()">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
-                style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
+    <div class="container">
+      <form>
+        <div class="cajita form-row">
+          <div class="input-group mb-3 backdiv">
+            <input class="form-control" style="z-index: 0;" name="search" type="text"
+              placeholder="Ingresa el Ticket que desea buscar" #myInput [(ngModel)]="search" (input)="Buscar()">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
+                  style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
-    <div class="row">
-      <div class="col-md-12 col-sm-12">
-        <hr style="background-color: ivory;"><br>
-        <div class="row"><br>
-          <!--AQUI EMPIEZA EL DIV-->
-          <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;" *ngFor='let ticket of tickets'>
-            <div class="row">
-              <div class="col-md-4">
-                <img style="padding: 25px"
-                  src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg" class="card-img">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title text" style="font-family: Montserrat">{{ticket.title}}</h5>
-                  <p class="card-text text-gray"><i class="fa fa-globe"
-                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Descripción: {{ticket.description}}
-                    </p>
-                  <p class="card-text text-gray"><i class="fa fa-chart-bar"
-                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Estado: {{ticket.status}}
-                  </p>
-                  <p class="card-text text-gray"><i class="fa fa-user"
-                    style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Cliente: {{ticket.client.nameClient}}
-                </p>
-                <p class="card-text text-gray"><i class="fa fa-calendar-alt"
-                  style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Fecha de inicio: {{ticket.startDate}}
-                </p>
-                <p class="card-text text-gray"><i class="fa fa-calendar-alt"
-                  style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Fecha de finalizado: {{ticket.finalDate}}
-                </p>
-                  <br><br><br>
-                 
+      </form>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <hr style="background-color: ivory;"><br>
+          <div class="row"><br>
+            <!--AQUI EMPIEZA EL DIV-->
+            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"
+              *ngFor='let ticket of tickets'>
+              <div *ngIf='ticket.status == "Terminado"' style="border-radius: 10px 10px 10px 10px;
+              -moz-border-radius: 10px 10px 10px 10px;
+              -webkit-border-radius: 10px 10px 10px 10px;
+              border: 1px solid #E1FFD1; background-color: #E1FFD1">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img style="padding: 25px"
+                      src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
+                      class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text" style="font-family: Montserrat; color: black;">{{ticket.title}}</h5>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-globe"
+                          style="font-size:16px; color: black; margin-right: 3px;"></i> Descripción:
+                        {{ticket.description}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-chart-bar"
+                          style="font-size:16px; color: black; margin-right: 9px;"></i> Estado: {{ticket.status}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-user"
+                          style="font-size:16px; color: black; margin-right: 9px;"></i> Cliente:
+                        {{ticket.client.nameClient}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
+                          style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de inicio:
+                        {{ticket.startDate}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
+                          style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de finalizado:
+                        {{ticket.finalDate}}
+                      </p>
+                      <br><br><br>
+
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div><br>
-    <hr style="background-color: ivory;">
+      </div><br>
+      <hr style="background-color: ivory;">
+    </div>
   </div>
-</div>
-
-  
