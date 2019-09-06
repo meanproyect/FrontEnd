@@ -4,6 +4,7 @@ import { TicketService } from 'src/app/services/ticket.service';
 import * as jwt_decode from 'jwt-decode';
 import Swal from 'sweetalert2';
 import { UpdateConfimTicket } from 'src/app/models/update-confim-ticket';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-listar-tickets-soporte',
   templateUrl: './listar-tickets-soporte.component.html',
@@ -14,8 +15,8 @@ export class ListarTicketsSoporteComponent implements OnInit {
   tickets: TicketModel[];
   search: string;
   ticketstatus: UpdateConfimTicket;
-  constructor(private rest: TicketService) {
-    this.ticket = new TicketModel('', '', '', '');
+  constructor(private rest: TicketService, private router: Router) {
+    this.ticket = new TicketModel('', '', '', '','',null);
     this.ticketstatus = new UpdateConfimTicket('');
   }
 
@@ -169,5 +170,8 @@ export class ListarTicketsSoporteComponent implements OnInit {
         }
       })
     }
+  }
+  verDetaalle(ticket){
+    this.router.navigateByUrl('detalle/'+ ticket._id);
   }
 }

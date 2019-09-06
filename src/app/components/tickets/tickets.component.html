@@ -2,37 +2,52 @@
 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
 <app-navbar></app-navbar>
 <div class="Fondo">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 col-sm-10">
-      <h2 class="h3 mb-3 font-weight-normal" style="color: black;">¡Ingresa los campos necesarios para la solicitud del
-        ticket!</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-10">
+        <h2 class="h3 mb-3 font-weight-normal" style="color: black;">¡Ingresa los campos necesarios para la solicitud
+          del
+          ticket!</h2>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-md-6 mx-auto mt-5">
+        <form>
+          <div class="form-group">
+            <label style="color: black">Titulo</label>
+            <input type="text" class="form-control" name="name" placeholder="Ingresa el titulo del ticket"
+              [(ngModel)]="ticket.title">
+          </div>
+          <div class="form-group">
+            <label style="color: black">Descripcion</label>
+            <input type="text" class="form-control" name="description" placeholder="Ingresa la descripcion del ticket"
+              [(ngModel)]="ticket.description">
+          </div>
+
+          <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+          <div class="file-upload">
+            <div class="file-select">
+              <div class="file-select-button" id="fileName"  >Choose File</div>
+              <div class="file-select-name" id="noFile" >No file chosen...</div>
+              <input type="file" name="chooseFile" id="chooseFile">
+            </div>
+          </div> -->
+
+          <div class="form-group">
+            <label style="color: black">Imagen</label>
+            <div class="custom-file">
+              <input type="file" class="form-control" name="Imagen_ticket"
+                placeholder="Ingresa la descripcion del ticket" (change)="fileChangeEvent($event)"
+                class="file-upload-field" [(ngModel)]="ticket.image"
+                style="margin:0 auto; width: 300px; margin-bottom: 45px;">
+            </div>
+          </div>
+          <br> <br><br>
+          <div class="submit" style="text-align: center;">
+            <input type="button" value="Solicitar Ticket" id="form_button" (click)="onSubmit()" />
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-  <div class="row ">
-    <div class="col-md-6 mx-auto mt-5">
-      <form>
-        <div class="form-group">
-          <label style="color: black">Titulo</label>
-          <input type="text" class="form-control" name="name" placeholder="Ingresa el titulo del ticket"
-            [(ngModel)]="ticket.title">
-        </div>
-        <div class="form-group">
-          <label style="color: black">Descripcion</label>
-          <input type="text" class="form-control" name="description" placeholder="Ingresa la descripcion del ticket"
-           [(ngModel)]="ticket.description">
-        </div>
-        <div class="form-group">
-          <label style="color: black">Imagen</label>
-          <input type="file" class="form-control" name="Imagen_ticket" placeholder="Ingresa la descripcion del ticket"
-           (change)="fileChangeEvent($event)" style="margin:0 auto; width: 300px;margin-bottom: 45px;">
-        </div>
-        <br>
-        <div class="submit" style="text-align: center;">
-          <input type="button" value="Solicitar Ticket" id="form_button" (click)="onSubmit()"/>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 </div>

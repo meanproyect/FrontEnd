@@ -17,7 +17,7 @@ export class ListarTicketsClienteComponent implements OnInit {
   ticketstatus: UpdateConfimTicket
   constructor(private rest: TicketService, private router: Router) {
     this.rest.setTicket(this.ticket);
-    this.ticket = new TicketModel('', '', '', '');
+    this.ticket = new TicketModel('', '', '', '','',null);
     this.ticketstatus = new UpdateConfimTicket('');
   }
 
@@ -109,4 +109,8 @@ export class ListarTicketsClienteComponent implements OnInit {
       })
     }
   }
+  verDetaalle(ticket){
+    this.router.navigateByUrl('detalle/'+ ticket._id);
+  }
+  
 }

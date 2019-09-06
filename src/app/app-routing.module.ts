@@ -23,6 +23,7 @@ import { UpdateSoporteDatosComponent } from './components/update-soporte-datos/u
 import { ClientGuard } from './guards/client.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { SupportGuard } from './guards/support.guard';
+import { TicketDetalleComponent } from './components/ticket-detalle/ticket-detalle.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path: 'listarTickets', component: ListarTicketsComponent,canActivate:[AdminGuard]},
   {path: 'otro', component: OtroComponent},
   {path: 'navbar', component: NavbarComponent},
+  {path: 'detalle/:id', component: TicketDetalleComponent, canActivate:[AuthGuard]},
   {path: 'soporte/:id', component: SoporteComponent,canActivate:[AdminGuard]},
   {path: 'listarSoporte', component: ListarSoporteComponent,canActivate:[AdminGuard]},
   {path: 'listarTicketsCliente', component: ListarTicketsClienteComponent, canActivate:[ClientGuard]},

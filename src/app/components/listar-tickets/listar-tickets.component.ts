@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketModel } from 'src/app/models/ticket-model';
 import { TicketService } from 'src/app/services/ticket.service';
-import { ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-tickets',
@@ -12,7 +12,7 @@ export class ListarTicketsComponent implements OnInit {
   ticket: TicketModel;
   tickes: TicketModel[];
   search: string;
-  constructor(private rest: TicketService) { }
+  constructor(private rest: TicketService, private router: Router) { }
 
   ngOnInit() {
     this.getTicket();
@@ -37,6 +37,8 @@ export class ListarTicketsComponent implements OnInit {
       this.tickes = ticketSearch;
     }
   }
-
+  verDetaalle(ticket){
+    this.router.navigateByUrl('detalle/'+ ticket._id);
+  }
   
 }

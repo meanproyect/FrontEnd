@@ -1,0 +1,43 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+<app-navbar></app-navbar>
+<div class="Fondo">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-10">
+      <h2 class="h3 mb-3 font-weight-normal" style="color: black;">¡Ingresa los campos necesarios para la solicitud del
+        ticket!</h2>
+    </div>
+  </div>
+  <div class="row " >
+    <div class="col-md-6 mx-auto mt-5">
+      <form>
+        <div class="form-group">
+          <label style="color: black">Titulo</label>
+          <input type="text" class="form-control" name="name" disabled [ngModelOptions]="{standalone: true}" placeholder="Titulo del ticket" [(ngModel)]="ticket.title">
+        </div>
+        <div class="form-group">
+          <label style="color: black">Descripcion</label>
+          <input type="text" class="form-control" name="description" disabled [ngModelOptions]="{standalone: true}" placeholder="Descripcion del ticket" [(ngModel)]="ticket.description">
+        </div>
+        <div class="form-group">
+          <label style="color: black">Estado</label>
+          <input type="text" class="form-control" name="status" disabled [ngModelOptions]="{standalone: true}" placeholder="Estado en el cuál se encuentra el ticket" [(ngModel)]="ticket.status">
+        </div>
+        <div class="form-group">
+          <label style="color: black">Fecha de Inicio</label>
+          <input type="text" class="form-control" name="dateStart" disabled [(ngModel)]="ticket.startDate">
+        </div>
+        <div class="form-group" >
+          <label style="color: black">Imagen</label><br>
+           <img style="width: 1200px; margin-left: -200px; " src= "http://localhost:3789/TicketPlusTI/getPhoto/{{ticket._id}}" >
+        </div>
+        <br>
+        <div class="submit" style="text-align: center;">
+          <input type="button" value="Regresar" (click)="getRegresar()" id="form_button"/>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

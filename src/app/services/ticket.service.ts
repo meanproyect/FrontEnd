@@ -63,6 +63,11 @@ export class TicketService {
       map(this.extracData)
     )
   }
+  getImage(id):Observable<any>{
+    return this.http.post(this.endpoint + '/getPhoto/' + id, this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
 
   //Actualizaciones de estado de ticket
 
