@@ -72,7 +72,7 @@
         </div><br>
         <!--TICKETS EN ESPERA-->
       </div>
-      <h3 *ngIf="wait != false" class="h3 mb-3 font-weight-normal">Tickets en Espera</h3>
+      <h3 *ngIf="wait != false">Tickets en Espera</h3>
       <h4 *ngIf="wait == false" class="h3 mb-3 font-weight-normal">¡No hay Tickets en <strong>Espera</strong>
         <h4 *ngIf="intento != false" class="h3 mb-3 font-weight-normal">¡No se encontraron resultados!</h4>
         registrados en la base de datos!
@@ -123,7 +123,7 @@
         </div>
       </div><br>
       <!--TICKETS EN CONFIRMACIÓN POR EL CLIENTE-->
-      <h3 *ngIf="confirmCustomer != false" class="h3 mb-3 font-weight-normal">Tickets en Confirmación por el Cliente
+      <h3 *ngIf="confirmCustomer != false">Tickets en Confirmación por el Cliente
         </h3>
         <h4 *ngIf="confirmCustomer == false" class="h3 mb-3 font-weight-normal">¡No hay Tickets en <strong>Confirmación
             por el
@@ -175,7 +175,7 @@
           </div>
         </div><br>
       <!--TICKETS CONFIRMADOS POR EL CLIENTE-->
-      <h3 *ngIf="confirm != false" class="h3 mb-3 font-weight-normal">Tickets Confirmados por el Ciente</h3>
+      <h3 *ngIf="confirm != false">Tickets Confirmados por el Ciente</h3>
       <h4 *ngIf="confirm == false" class="h3 mb-3 font-weight-normal">¡No hay Tickets en <strong>Confirmados por el
           Cliente</strong> registrados en la base de datos!</h4>
       <h4 *ngIf="intento != false" class="h3 mb-3 font-weight-normal">¡No se encontraron resultados!</h4>
