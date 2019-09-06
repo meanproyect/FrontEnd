@@ -165,7 +165,7 @@
                           {{ticket.startDate}}
                         </p>
                         <br><br><br>
-                        <button type="button" class="btn btn-outline-primary btn-block" *ngIf="ticket.status != 'CONFIRMACION POR CLIENTE' && ticket.status != 'CONFIRMADO'" (click)="verDetaalle(ticket)"  routerLink="/detalle">Ver Detalle de Ticket</button> 
+                        <button type="button" class="btn btn-outline-primary btn-block" *ngIf="ticket.status != 'CONFIRMAR POR CLIENTE' && ticket.status != 'CONFIRMADO'" (click)="verDetaalle(ticket)"  routerLink="/detalle">Ver Detalle de Ticket</button> 
                       </div>
                     </div>
                   </div>
