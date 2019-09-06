@@ -32,6 +32,30 @@ export class TicketService {
       map(this.extracData)
     )
   }
+
+  getTicketsProcess():Observable<any>{
+    return this.http.get(this.endpoint + '/Listar-Ticket-Proceso', this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
+
+  getTicketsWait():Observable<any>{
+    return this.http.get(this.endpoint + '/Listar-Ticket-Espera', this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
+
+  getTicketsConfirmCustomer():Observable<any>{
+    return this.http.get(this.endpoint + '/Listar-Ticket-ConfirmarCliente', this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
+
+  getTicketsConfirmed():Observable<any>{
+    return this.http.get(this.endpoint + '/Listar-Ticket-Confirmado', this.httpOptions).pipe(
+      map(this.extracData)
+    )
+  }
   
   setTicket(save_ticket):Observable<any>{
     let params = JSON.stringify(save_ticket);

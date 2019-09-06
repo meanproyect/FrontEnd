@@ -13,24 +13,80 @@
             <input class="form-control" style="z-index: 0;" name="search" type="text"
               placeholder="Ingresa el Ticket que desea buscar" #myInput [(ngModel)]="search" (input)="Buscar2()">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i class='fa fa-search'
-                  style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
+              <button (click)="Buscar2()" class="btn btn-outline-secondary" style="z-index: 0;" type="submit"><i
+                  class='fa fa-search' style='font-size:12px; margin-right: 5px;'></i>Buscar</button>
             </div>
           </div>
         </div>
       </form>
-      <h3 class="h3 mb-3 font-weight-normal">Tickets en Proceso</h3>
-      <div *ngFor='let ticket of tickes' class="row">
-
-        <div *ngIf='ticket.status == "PROCESO"' class="col-md-12 col-sm-12">
+      <div>
+        <!--TICKETS EN PROCESO-->
+        <h3 *ngIf="process != false">Tickets en Proceso</h3>
+        <h4 *ngIf="process == false" class="h3 mb-3 font-weight-normal">¡No hay Tickets en <strong>Proceso</strong>
+          registrados en la base de datos!</h4>
+        <h4 *ngIf="intento != false" class="h3 mb-3 font-weight-normal">¡No se encontraron resultados!</h4>
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <hr style="background-color: ivory;"><br>
+            <div class="row"><br>
+              <!--AQUI EMPIEZA EL DIV-->
+              <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"
+                *ngFor='let ticket of ticketsProcess'>
+                <div *ngIf='ticket.status == "PROCESO"' style="border-radius: 10px 10px 10px 10px;
+                  -moz-border-radius: 10px 10px 10px 10px;
+                  -webkit-border-radius: 10px 10px 10px 10px;
+                  border: 1px solid #D1D1FF; background-color: #D1D1FF">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img style="padding: 25px"
+                        src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
+                        class="card-img">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title text" style="font-family: Montserrat; color: black;">{{ticket.title}}</h5>
+                        <p class="card-text text-gray" style="color: black;"><i class="fa fa-globe"
+                            style="font-size:16px; color: black; margin-right: 3px;"></i> Descripción:
+                          {{ticket.description}}
+                        </p>
+                        <p class="card-text text-gray" style="color: black;"><i class="fa fa-chart-bar"
+                            style="font-size:16px; color: black; margin-right: 9px;"></i> Estado: {{ticket.status}}
+                        </p>
+                        <p class="card-text text-gray" style="color: black;"><i class="fa fa-user"
+                            style="font-size:16px; color: black; margin-right: 9px;"></i> Cliente:
+                          {{ticket.client.nameClient}}
+                        </p>
+                        <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
+                            style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de inicio:
+                          {{ticket.startDate}}
+                        </p>
+                        <br><br><br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <!--TICKETS EN ESPERA-->
+      </div>
+      <h3 *ngIf="wait != false" class="h3 mb-3 font-weight-normal">Tickets en Espera</h3>
+      <h4 *ngIf="wait == false" class="h3 mb-3 font-weight-normal">¡No hay Tickets en <strong>Espera</strong>
+        <h4 *ngIf="intento != false" class="h3 mb-3 font-weight-normal">¡No se encontraron resultados!</h4>
+        registrados en la base de datos!
+      </h4>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
           <hr style="background-color: ivory;"><br>
-          <div  class="row"><br>
-            <!--AQUI EMPIEZA EL DIV-->            
-            <div class="card mb-3"   style="max-width: 540px; min-height: 223px; border-radius: 10px 10px 10px 10px;
-            -moz-border-radius: 10px 10px 10px 10px;
-            -webkit-border-radius: 10px 10px 10px 10px;
-            border: 1px solid #D1D1FF ; background-color: #D1D1FF; margin-left: auto; margin-right: auto">
-            <div >
+          <div class="row"><br>
+            <!--AQUI EMPIEZA EL DIV-->
+            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"
+              *ngFor='let ticket of ticketsWait'>
+              <div *ngIf='ticket.status == "ESPERA"' style="border-radius: 10px 10px 10px 10px;
+                  -moz-border-radius: 10px 10px 10px 10px;
+                  -webkit-border-radius: 10px 10px 10px 10px;
+                  border: 1px solid #FFD1D1; background-color: #FFD1D1">
                 <div class="row">
                   <div class="col-md-4">
                     <img style="padding: 25px"
@@ -45,11 +101,10 @@
                         {{ticket.description}}
                       </p>
                       <p class="card-text text-gray" style="color: black;"><i class="fa fa-chart-bar"
-                          style="font-size:16px; color:black; margin-right: 9px;"></i> Estado:
-                        {{ticket.status}}
+                          style="font-size:16px; color: black; margin-right: 9px;"></i> Estado: {{ticket.status}}
                       </p>
                       <p class="card-text text-gray" style="color: black;"><i class="fa fa-user"
-                          style="font-size:16px; color:black; margin-right: 9px;"></i> Cliente:
+                          style="font-size:16px; color: black; margin-right: 9px;"></i> Cliente:
                         {{ticket.client.nameClient}}
                       </p>
                       <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
@@ -58,49 +113,106 @@
                       </p>
                       <br><br><br>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <!--TICKETS EN CONFIRMACIÓN POR EL CLIENTE-->
+      <h3 *ngIf="confirmCustomer != false" class="h3 mb-3 font-weight-normal">Tickets en Confirmación por el Cliente
+      </h3>
+      <h4 *ngIf="confirmCustomer == false" class="h3 mb-3 font-weight-normal">¡No hay Tickets en <strong>Confirmación
+          por el
+          Cliente</strong> registrados en la base de datos!</h4>
+      <h4 *ngIf="intento != false" class="h3 mb-3 font-weight-normal">¡No se encontraron resultados!</h4>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <hr style="background-color: ivory;"><br>
+          <div class="row"><br>
+            <!--AQUI EMPIEZA EL DIV-->
+            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"
+              *ngFor='let ticket of ticketsConfirmCustomer'>
+              <div *ngIf='ticket.status == "CONFIRMAR POR CLIENTE"' style="border-radius: 10px 10px 10px 10px;
+                    -moz-border-radius: 10px 10px 10px 10px;
+                    -webkit-border-radius: 10px 10px 10px 10px;
+                    border: 1px solid #FCFFD1; background-color: #FCFFD1">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img style="padding: 25px"
+                      src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
+                      class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text" style="font-family: Montserrat; color: black;">{{ticket.title}}</h5>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-globe"
+                          style="font-size:16px; color: black; margin-right: 3px;"></i> Descripción:
+                        {{ticket.description}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-chart-bar"
+                          style="font-size:16px; color: black; margin-right: 9px;"></i> Estado: {{ticket.status}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-user"
+                          style="font-size:16px; color: black; margin-right: 9px;"></i> Cliente:
+                        {{ticket.client.nameClient}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
+                          style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de inicio:
+                        {{ticket.startDate}}
+                      </p>
+                      <br><br><br>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
       </div><br>
-      <div *ngFor='let ticket of tickes' class="row">
-        <div *ngIf="ticket.status == 'ESPERA'" class="col-md-12 col-sm-12">
+      <!--TICKETS CONFIRMADOS POR EL CLIENTE-->
+      <h3 *ngIf="confirm != false" class="h3 mb-3 font-weight-normal">Tickets Confirmados por el Ciente</h3>
+      <h4 *ngIf="confirm == false" class="h3 mb-3 font-weight-normal">¡No hay Tickets en <strong>Confirmados por el
+          Cliente</strong> registrados en la base de datos!</h4>
+      <h4 *ngIf="intento != false" class="h3 mb-3 font-weight-normal">¡No se encontraron resultados!</h4>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
           <hr style="background-color: ivory;"><br>
           <div class="row"><br>
             <!--AQUI EMPIEZA EL DIV-->
-            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px 10px 10px 10px;
-            -moz-border-radius: 10px 10px 10px 10px;
-            -webkit-border-radius: 10px 10px 10px 10px;
-            border: 1px solid #FFD1D1  ; background-color: #FFD1D1 ">
-              <div class="row">
-                <div class="col-md-4">
-                  <img style="padding: 25px"
-                    src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
-                    class="card-img">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title text" style="font-family: Montserrat; color: black;">{{ticket.title}}</h5>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-globe"
-                        style="font-size:16px; color: black; margin-right: 3px;"></i> Descripción:
-                      {{ticket.description}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-chart-bar"
-                        style="font-size:16px; color:black; margin-right: 9px;"></i> Estado:
-                      {{ticket.status}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-user"
-                        style="font-size:16px; color:black; margin-right: 9px;"></i> Cliente:
-                      {{ticket.client.nameClient}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
-                        style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de inicio:
-                      {{ticket.startDate}}
-                    </p>
-                    <br><br><br>
-
+            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"
+              *ngFor='let ticket of ticketsConfirmed'>
+              <div *ngIf='ticket.status == "CONFIRMADO"' style="border-radius: 10px 10px 10px 10px;
+                      -moz-border-radius: 10px 10px 10px 10px;
+                      -webkit-border-radius: 10px 10px 10px 10px;
+                      border: 1px solid #D1FFF2; background-color: #D1FFF2">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img style="padding: 25px"
+                      src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
+                      class="card-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title text" style="font-family: Montserrat; color: black;">{{ticket.title}}</h5>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-globe"
+                          style="font-size:16px; color: black; margin-right: 3px;"></i> Descripción:
+                        {{ticket.description}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-chart-bar"
+                          style="font-size:16px; color: black; margin-right: 9px;"></i> Estado: {{ticket.status}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-user"
+                          style="font-size:16px; color: black; margin-right: 9px;"></i> Cliente:
+                        {{ticket.client.nameClient}}
+                      </p>
+                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
+                          style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de inicio:
+                        {{ticket.startDate}}
+                      </p>
+                      <br><br><br>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,95 +220,5 @@
           </div>
         </div>
       </div><br>
-      <div *ngFor='let ticket of tickes' class="row">
-        <div *ngIf="ticket.status == 'CONFIRMAR POR CLIENTE'" class="col-md-12 col-sm-12">
-          <hr style="background-color: ivory;"><br>
-          <div class="row"><br>
-            <!--AQUI EMPIEZA EL DIV-->
-            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px 10px 10px 10px;
-            -moz-border-radius: 10px 10px 10px 10px;
-            -webkit-border-radius: 10px 10px 10px 10px;
-            border: 1px solid #FCFFD1  ; background-color: #FCFFD1 ">
-              <div class="row">
-                <div class="col-md-4">
-                  <img style="padding: 25px"
-                    src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
-                    class="card-img">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title text" style="font-family: Montserrat; color: black;">{{ticket.title}}</h5>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-globe"
-                        style="font-size:16px; color: black; margin-right: 3px;"></i> Descripción:
-                      {{ticket.description}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-chart-bar"
-                        style="font-size:16px; color:black; margin-right: 9px;"></i> Estado:
-                      {{ticket.status}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-user"
-                        style="font-size:16px; color:black; margin-right: 9px;"></i> Cliente:
-                      {{ticket.client.nameClient}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
-                        style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de inicio:
-                      {{ticket.startDate}}
-                    </p>
-                    <br><br><br>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><br>
-      <div *ngFor='let ticket of tickes' class="row">
-        <div *ngIf="ticket.status == 'CONFIRMADO'" class="col-md-12 col-sm-12">
-          <hr style="background-color: ivory;"><br>
-          <div class="row"><br>
-            <!--AQUI EMPIEZA EL DIV-->
-            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px 10px 10px 10px;
-            -moz-border-radius: 10px 10px 10px 10px;
-            -webkit-border-radius: 10px 10px 10px 10px;
-            border: 1px solid #D1FFF2; background-color: #D1FFF2">
-              <div class="row">
-                <div class="col-md-4">
-                  <img style="padding: 25px"
-                    src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
-                    class="card-img">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title text" style="font-family: Montserrat; color: black;">{{ticket.title}}</h5>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-globe"
-                        style="font-size:16px; color: black; margin-right: 3px;"></i> Descripción:
-                      {{ticket.description}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-chart-bar"
-                        style="font-size:16px; color: black; margin-right: 9px;"></i> Estado: {{ticket.status}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-user"
-                        style="font-size:16px; color: black; margin-right: 9px;"></i> Cliente:
-                      {{ticket.client.nameClient}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
-                        style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de inicio:
-                      {{ticket.startDate}}
-                    </p>
-                    <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
-                        style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de finalizado:
-                      {{ticket.finalDate}}
-                    </p>
-                    <br><br><br>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><br>
-      <hr style="background-color: ivory;">
     </div>
   </div>

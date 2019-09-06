@@ -11,18 +11,24 @@ export class ListarTicketsTerminadosComponent implements OnInit {
   ticket: TicketModel
   tickets: TicketModel[];
   search: string;
+  process: boolean;
 
   constructor(private rest: TicketService) { }
 
   ngOnInit() {
     this.getTicket();
     console.log(this.tickets);
+    this.process = true;
   }
 
   getTicket(){
     this.rest.getTicketsFinished().subscribe(res =>{
       console.log(res);
-      this.tickets = res.ticket;
+      if (res.ticket != '') {
+        this.tickets = res.ticket;
+      } else {
+        this.process = false;
+      }
     })
   }
 
