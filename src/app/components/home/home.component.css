@@ -275,7 +275,7 @@ button::before {
     position: relative;
     top: -44px;
     left: -4px;
-    color: #00BF9C;
+    color: white;
     font-size: 21px;
     font-weight: 300;
 }
@@ -290,7 +290,7 @@ button::before {
     position: relative;
     top: -44px;
     left: -9px;
-    color: rgb(154, 123, 255);
+    color: white;
     font-size: 21px;
     font-weight: 300;
 }
@@ -304,7 +304,7 @@ button::before {
     position: relative;
     top: -44px;
     left: -9px;
-    color: #008BFF;
+    color: white;
     font-size: 21px;
     font-weight: 300;
 }
@@ -314,7 +314,7 @@ button::before {
     position: relative;
     top: -44px;
     left: -9px;
-    color: #008BFF;
+    color: white;
     font-size: 21px;
     font-weight: 300;
 }
@@ -332,7 +332,7 @@ button::before {
     position: relative;
     top: -44px;
     left: -9px;
-    color: #FF6500;
+    color: white;
     font-size: 21px;
     font-weight: 300;
 }
