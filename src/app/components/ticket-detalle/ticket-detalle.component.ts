@@ -29,9 +29,14 @@ export class TicketDetalleComponent implements OnInit {
       this.ticket.startDate = res.ticket.startDate;
       
      this.ticket._id = res.ticket._id;
-     console.log(this.ticket._id)
-    });
+     console.log(this.ticket._id);
     
+    });
+  }
+  getopen(){
+    this.rest.buscarTicket(this.params.snapshot.params.id).subscribe(res => {
+      window.open("http://localhost:3789/TicketPlusTI/getPhoto/" + res.ticket._id);
+    });
     
   }
   getRegresar(){
