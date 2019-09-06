@@ -116,55 +116,23 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div><br>
-      <!--TICKETS EN CONFIRMACIÓN POR EL CLIENTE-->
-      <h3 *ngIf="confirmCustomer != false" class="h3 mb-3 font-weight-normal">Tickets en Confirmación por el Cliente
-      </h3>
-      <h4 *ngIf="confirmCustomer == false" class="h3 mb-3 font-weight-normal">¡No hay Tickets en <strong>Confirmación
-          por el
-          Cliente</strong> registrados en la base de datos!</h4>
-      <h4 *ngIf="intento != false" class="h3 mb-3 font-weight-normal">¡No se encontraron resultados!</h4>
-      <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <hr style="background-color: ivory;"><br>
-          <div class="row"><br>
-            <!--AQUI EMPIEZA EL DIV-->
-            <div class="card mb-3" style="max-width: 540px; min-height: 223px; border-radius: 10px;"
-              *ngFor='let ticket of ticketsConfirmCustomer'>
-              <div *ngIf='ticket.status == "CONFIRMAR POR CLIENTE"' style="border-radius: 10px 10px 10px 10px;
-                    -moz-border-radius: 10px 10px 10px 10px;
-                    -webkit-border-radius: 10px 10px 10px 10px;
-                    border: 1px solid #FCFFD1; background-color: #FCFFD1">
-                <div class="row">
-                  <div class="col-md-4">
-                    <img style="padding: 25px"
-                      src="https://icon-library.net/images/concert-ticket-icon/concert-ticket-icon-8.jpg"
-                      class="card-img">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title text" style="font-family: Montserrat; color: black;">{{ticket.title}}</h5>
-                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-globe"
-                          style="font-size:16px; color: black; margin-right: 3px;"></i> Descripción:
-                        {{ticket.description}}
-                      </p>
-                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-chart-bar"
-                          style="font-size:16px; color: black; margin-right: 9px;"></i> Estado: {{ticket.status}}
-                      </p>
-                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-user"
-                          style="font-size:16px; color: black; margin-right: 9px;"></i> Cliente:
-                        {{ticket.client.nameClient}}
-                      </p>
-                      <p class="card-text text-gray" style="color: black;"><i class="fa fa-calendar-alt"
-                          style="font-size:16px; color: black; margin-right: 3px;"></i> Fecha de inicio:
-                        {{ticket.startDate}}
-                      </p>
-                      <br><br><br>
-                    </div>
-                  </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title text" style="font-family: Montserrat">{{ticket.title}}</h5>
+                  <p class="card-text text-gray"><i class="fa fa-globe"
+                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Descripción: {{ticket.description}}
+                    </p>
+                  <p class="card-text text-gray"><i class="fa fa-chart-bar"
+                      style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Estado: {{ticket.status}}
+                  </p>
+                  <p class="card-text text-gray"><i class="fa fa-user"
+                    style="font-size:16px; color: rgb(158, 158, 158); margin-right: 9px;"></i> Cliente: {{ticket.client.nameClient}}
+                </p>
+                <p class="card-text text-gray"><i class="fa fa-calendar-alt"
+                  style="font-size:16px; color: rgb(158, 158, 158); margin-right: 3px;"></i> Fecha de inicio: {{ticket.startDate}}
+                </p>
+                  <br><br><br>
+                  <button type="button" class="btn btn-outline-primary btn-block" *ngIf="ticket.status != 'CONFIRMACION POR CLIENTE' && ticket.status != 'CONFIRMADO'" (click)="verDetaalle(ticket)"  routerLink="/detalle">Ver Detalle de Ticket</button> 
                 </div>
               </div>
             </div>

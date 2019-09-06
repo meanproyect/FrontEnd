@@ -47,6 +47,7 @@
                   <button type="button" class="btn btn-outline-danger btn-block"  *ngIf="ticket.status == 'CONFIRMADO'" (click)="updateTicketEnd(ticket)">Terminar Ticket</button>
                   <button type="button" class="btn btn-outline-primary btn-block" *ngIf="ticket.status == 'PROCESO'"  style="margin: 10px" (click)="updateTicketWait(ticket)" >ESPERA</button>
                   <button type="button" class="btn btn-outline-primary btn-block" *ngIf="ticket.status == 'PROCESO'"  style="margin: 10px" (click)="updateTicketConfirmOfClient(ticket)" >CONFIRMAR POR CLIENTE</button>
+                  <button type="button" class="btn btn-outline-info btn-block btn-lg" style="margin: 10px"  *ngIf="ticket.status != 'CONFIRMACION POR CLIENTE' && ticket.status != 'CONFIRMADO'" (click)="verDetaalle(ticket)"  routerLink="/detalle">Ver Detalle de Ticket</button> 
                 </div>
               </div>
             </div>

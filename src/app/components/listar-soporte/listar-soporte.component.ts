@@ -73,5 +73,8 @@ export class ListarSoporteComponent implements OnInit {
       console.log('Cancelado')
     }
   }
+  verDetaalle(ticket){
+    this.router.navigateByUrl('detalle/'+ ticket._id);
+  }
 
 }

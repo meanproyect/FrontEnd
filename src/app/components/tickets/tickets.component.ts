@@ -4,17 +4,21 @@ import Swal from 'sweetalert2';
 import { TicketModel } from 'src/app/models/ticket-model';
 import { TicketService } from 'src/app/services/ticket.service';
 import * as jwt_decode from 'jwt-decode';
+import { UploadService } from 'src/app/services/upload.service';
+import { error } from 'util';
+declare const myTest: any;
 @Component({
   selector: 'app-tickets',
   templateUrl: './tickets.component.html',
   styleUrls: ['./tickets.component.css']
 })
 export class TicketsComponent implements OnInit {
+  
   ticket: TicketModel;
   fileToUpload: Array<File>;
-  constructor(public rest: TicketService, private router: Router, private params: ActivatedRoute) {
+  constructor(public rest: TicketService, private router: Router, private params: ActivatedRoute, public upload: UploadService) {
     this.rest.setTicket(this.ticket);
-    this.ticket = new TicketModel('','','','');
+    this.ticket = new TicketModel('','','','','',null);
    }
 
   ngOnInit() {
@@ -24,7 +28,7 @@ export class TicketsComponent implements OnInit {
         this.ticket.description = res.ticket.description;
       })
     }else{
-      this.ticket = new TicketModel('','','','');
+      this.ticket = new TicketModel('','','','','',null);
     }
   }
   onSubmit(){
@@ -67,6 +71,8 @@ export class TicketsComponent implements OnInit {
           });
         }else{
           if(res.ticket && res.ticket._id){
+            
+            this.upload.uploadPhoto(res.ticket._id, this.fileToUpload).catch(error);
             Swal.fire({
               type: 'success',
               title: 'Guardado',
@@ -82,6 +88,10 @@ export class TicketsComponent implements OnInit {
 
 fileChangeEvent(event: any){
   this.fileToUpload = <Array<File>>event.target.files;
+}
+
+onClick() {
+  myTest();
 }
 
 
