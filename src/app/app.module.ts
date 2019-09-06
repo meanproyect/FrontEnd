@@ -53,14 +53,16 @@ import { TicketDetalleComponent } from './components/ticket-detalle/ticket-detal
     ListarTicketsClienteComponent,
     ListarTicketsTerminadosComponent,
     UpdateSoporteDatosComponent,
-    TicketDetalleComponent,
+    TicketDetalleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // DocumentViewModule
+    
   ],
   providers: [ClientService],
   bootstrap: [AppComponent]

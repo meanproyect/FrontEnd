@@ -71,15 +71,25 @@ export class TicketsComponent implements OnInit {
           });
         }else{
           if(res.ticket && res.ticket._id){
-            
-            this.upload.uploadPhoto(res.ticket._id, this.fileToUpload).catch(error);
-            Swal.fire({
-              type: 'success',
-              title: 'Guardado',
-              text: 'Se ha guardado corrrectamente',
-              timer: 2000
-            });
-            this.router.navigateByUrl('listarTicketsCliente');
+            if(this.ticket.image == ''){
+              Swal.fire({
+                type: 'success',
+                title: 'Guardado',
+                text: 'Se ha guardado corrrectamente',
+                timer: 2000
+              });
+              this.router.navigateByUrl('listarTicketsCliente');
+            }else{
+              this.upload.uploadPhoto(res.ticket._id, this.fileToUpload).catch(error);
+              Swal.fire({
+                type: 'success',
+                title: 'Guardado',
+                text: 'Se ha guardado corrrectamente',
+                timer: 2000
+              });
+              this.router.navigateByUrl('listarTicketsCliente');
+            }
+           
           }
         }
       });

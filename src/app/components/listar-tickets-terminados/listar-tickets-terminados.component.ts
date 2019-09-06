@@ -9,7 +9,7 @@ import { TicketService } from 'src/app/services/ticket.service';
 })
 export class ListarTicketsTerminadosComponent implements OnInit {
   ticket: TicketModel
-  tickets: TicketModel[];
+  tickets: any[];
   search: string;
   process: boolean;
 
@@ -24,7 +24,7 @@ export class ListarTicketsTerminadosComponent implements OnInit {
   getTicket(){
     this.rest.getTicketsFinished().subscribe(res =>{
       console.log(res);
-      if (res.ticket != '') {
+      if (res.ticket != null) {
         this.tickets = res.ticket;
       } else {
         this.process = false;

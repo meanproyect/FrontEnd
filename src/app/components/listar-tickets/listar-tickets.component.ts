@@ -11,14 +11,11 @@ import { ActivatedRouteSnapshot, Router } from '@angular/router';
 export class ListarTicketsComponent implements OnInit {
   ticket: TicketModel;
   tickes: TicketModel[];
-  ticketsProcess: TicketModel[];
-  ticketsWait: TicketModel[];
-  ticketsConfirmCustomer: TicketModel[];
-  ticketsConfirmed: TicketModel[];
-  process: boolean;
-  wait: boolean;
-  confirmCustomer: boolean;
-  confirm: boolean;
+  ticketsProcess: any[];
+  ticketsWait: any[];
+  ticketsConfirmCustomer: any[];
+  ticketsConfirmed: any[];
+
   search: string;
   intento: boolean;
   constructor(private rest: TicketService, private router: Router) { }
@@ -29,10 +26,7 @@ export class ListarTicketsComponent implements OnInit {
     this.getTicketWait();
     this.getTicketConfirmCustomer();
     this.getTicketConfirmed();
-    this.process = true;
-    this.wait = true;
-    this.confirmCustomer = true;
-    this.confirm = true;
+
     this.intento = false;
   }
 
@@ -46,44 +40,28 @@ export class ListarTicketsComponent implements OnInit {
   getTicketProcess() {
     this.rest.getTicketsProcess().subscribe(res => {
       console.log(res);
-      if (res.ticket != '') {
-        this.ticketsProcess = res.ticket;
-      } else {
-        this.process = false;
-      }
+        this.ticketsProcess = res.ticket;     
     });
   }
 
   getTicketWait() {
     this.rest.getTicketsWait().subscribe(res => {
       console.log(res);
-      if (res.ticket != '') {
         this.ticketsWait = res.ticket;
-      } else {
-        this.wait = false;
-      }
     });
   }
 
   getTicketConfirmCustomer() {
     this.rest.getTicketsConfirmCustomer().subscribe(res => {
       console.log(res);
-      if (res.ticket != '') {
-        this.ticketsConfirmCustomer = res.ticket;
-      } else {
-        this.confirmCustomer = false;
-      }
+        this.ticketsConfirmCustomer = res.ticket;      
     });
   }
 
   getTicketConfirmed() {
     this.rest.getTicketsConfirmed().subscribe(res => {
       console.log(res);
-      if (res.ticket != '') {
         this.ticketsConfirmed = res.ticket;
-      } else {
-        this.confirm = false;
-      }
     });
   }
 
@@ -99,13 +77,12 @@ export class ListarTicketsComponent implements OnInit {
       return (buscar2.title.indexOf(this.search.toUpperCase()) > -1 ||
         buscar2.description.indexOf(this.search.toUpperCase()) > -1)
     })
-    this.intento = false;
+
     console.log(ticketSearch);
     if (this.search == "") {
       this.getTicketProcess();
     } else {
       this.ticketsProcess = ticketSearch; 
-      this.intento = true; 
     }
   }
 
@@ -146,7 +123,6 @@ export class ListarTicketsComponent implements OnInit {
     console.log(ticketSearch);
     if (this.search == "") {
       this.getTicketConfirmed();
-      this.process = true;
     } else {
       this.ticketsConfirmed = ticketSearch;
     }

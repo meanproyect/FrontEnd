@@ -43,7 +43,6 @@
                   <button type="button" class="btn btn-outline-primary btn-block" style="margin: 10px" (click)="updateSupports(support)">Actualizar Datos Personales</button>
                   <button type="button" class="btn btn-outline-success" style="margin: 10px" (click)="updateSupportsContrasena(support)">Actualizar Contraseña</button>
                   <button type="button" class="btn btn-outline-danger"  style="width: auto;" (click)="deleteSupport(support)">Eliminar</button>
-                  <button type="button" class="btn btn-outline-primary btn-block" *ngIf="ticket.status != 'CONFIRMACION POR CLIENTE' && ticket.status != 'CONFIRMADO'" (click)="verDetaalle(ticket)"  routerLink="/detalle">Ver Detalle de Ticket</button> 
                 </div>
                 </div>
               </div>

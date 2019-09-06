@@ -29,13 +29,35 @@ export class TicketDetalleComponent implements OnInit {
       this.ticket.startDate = res.ticket.startDate;
       
      this.ticket._id = res.ticket._id;
+     this.ticket.image = res.ticket.image;
+     console.log( this.ticket.image);
+     if(this.ticket.image == null){
+       this.ticket.image = 'image';
+     }
+     else{
+       if(this.ticket.image.includes('mp4')){
+        this.ticket.image = 'mp4';
+       }else if(this.ticket.image.includes('png')){
+         this.ticket.image = 'image';
+       }else if(this.ticket.image.includes('jpg')){
+        this.ticket.image = 'image';
+      }else if(this.ticket.image.includes('pdf')){
+        this.ticket.image = 'pdf';
+      }else if(this.ticket.image.includes('docx')){
+        this.ticket.image = 'pdf';
+      }
+     }
+     
      console.log(this.ticket._id);
     
     });
   }
+  
+
   getopen(){
+
     this.rest.buscarTicket(this.params.snapshot.params.id).subscribe(res => {
-      window.open("http://localhost:3789/TicketPlusTI/getPhoto/" + res.ticket._id);
+       window.open("http://localhost:3789/TicketPlusTI/getPhoto/" + res.ticket._id);
     });
     
   }
