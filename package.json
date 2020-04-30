@@ -23,7 +23,7 @@
     "bootswatch": "^4.3.1",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jwt-decode": "^2.2.0",
     "ngx-doc-viewer": "^0.1.20",
     "ngx-document-view": "^1.0.1",
